@@ -1,7 +1,7 @@
 import * as argon2 from "argon2";
 import * as jwt from "jsonwebtoken";
 import { Service, Inject } from "typedi";
-import { SESSION_MAX_AGE, DEV_ENV } from "../../config";
+import { SESSION_MAX_AGE, DEV_ENV, PROD_ENV } from "../../config";
 import formData from "form-data";
 import Mailgun from "mailgun.js";
 
@@ -9,6 +9,7 @@ type EmailOptions = {
   message: string;
   userName?: string;
   userEmail: string;
+  isInternal?: boolean;
 };
 export interface EmailServiceI {
   sendEmail(orgEmail: string, orgName: string, options: EmailOptions): object;
@@ -18,7 +19,7 @@ export interface EmailServiceI {
 class EmailService implements EmailServiceI {
   #MAILGUN_API_KEY: string;
   #MAILGUN_DOMAIN: string;
-  #mailClient;
+  #mailClient: any;
 
   constructor(
     @Inject("MAILGUN_API_KEY") MAILGUN_API_KEY: string,
@@ -30,16 +31,15 @@ class EmailService implements EmailServiceI {
     this.#MAILGUN_DOMAIN = MAILGUN_DOMAIN;
 
     const mg = new Mailgun(formData);
-
-    // check if username is correct
     this.#mailClient = mg.client({ key: MAILGUN_API_KEY, username: "api" });
   }
 
   public sendEmail = async (orgEmail: string, orgName: string, options?: EmailOptions): Promise<any> => {
     try {
-      this.logger.info("EmailService: sending email...");
+      this.logger.info("EmailService::sendEmail:: - Initialized - ");
 
-      const TO_DATA = DEV_ENV ? `ClearPathDevUser, abartaddison1@clearpathnyc.org` : `${orgName}, ${orgEmail}`;
+      //update!!
+      let recipient = DEV_ENV ? options.userEmail : `abartaddison12@gmail.com`;
 
       const name = options.userName || null;
       const defaultMessage = `
@@ -56,21 +56,16 @@ class EmailService implements EmailServiceI {
       },would greatly appreciate it if you contacted them or provided the needed information to be considered for your programs.Please find their contact information and/or necessary documentation below!`;
 
       const data = {
-        from: `ClearPathNYC User ${options.userEmail ? `<${options.userEmail}>` : ""}`,
-        to: TO_DATA,
+        from: `ClearPathNYC User (${options.userEmail}) <Clearpathnyc@gmail.com> `,
+        to: [recipient],
         subject: "A message from ClearPath - ",
         text: defaultMessage,
       };
 
-      this.#mailClient.messages().send(data, function (error, body) {
-        if (error) {
-          console.log("ERROR WITH MAIL---", error);
-        } else {
-          console.log(body);
-        }
+      return this.#mailClient.messages.create(this.#MAILGUN_DOMAIN, data).then((res) => {
+        this.logger.info("EmailService::sendEmail:: - Success -");
+        return res;
       });
-
-      return this.#mailClient;
     } catch (err) {
       this.logger.error(err);
       throw new Error(`Failure when sending email: ${err}`);

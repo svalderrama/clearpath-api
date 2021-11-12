@@ -17,14 +17,14 @@ function ApplicationController() {
     /* Submit a user application */
     async submit(req, res, next: (err: any) => void) {
       try {
-        logger.info(`ApplicationController:submit:: Starting submit action`);
+        logger.info(`ApplicationController::submit:: Starting submit action`);
 
         /* TODO: Validate data (need user id & org id, message optional) */
         const { message, userId, orgId } = req.body;
         const pendingApp = await ApplicationService.hasPendingApp(userId, orgId);
 
         if (pendingApp) {
-          logger.info("ApplicationController:submit::failed:: Application already exists for this org");
+          logger.info("ApplicationController::submit::failed:: Application already exists for this org");
           throw new Error("CONFLICT: An application has already been submitted for this org");
         }
 
@@ -33,25 +33,24 @@ function ApplicationController() {
         //TODO: Add custom exceptions and raise them. Sanitize org_id and user
 
         const modifiers = {
-          userName: user.name || null,
+          userName: user?.firstName || null,
+          userEmail: user.email,
           message: message || "",
         };
-        // const mailResponse = await EmailService.sendEmail(org.email, org.name, modifiers);
 
-        // if (mailResponse) {
-        const application = await ApplicationService.create(userId, orgId, org.name, message);
+        const mailResponse = await EmailService.sendEmail(org.email, org.name, modifiers);
 
-        logger.info(`ApplicationController:submit:: Successful submission`);
-        return res.status(200).json({
-          message: "ok",
-          data: application,
-        });
-        // } else {
-        //   logger.error(`ApplicationController:submit::Error submitting application`);
-        //   next({ reqBody: req.body, org, user });
-        // }
+        if (mailResponse) {
+          const application = await ApplicationService.create(userId, orgId, org.name, message);
+
+          logger.info(`ApplicationController::submit::success:: Application submitted`, { userId, orgId });
+          return res.status(200).json({ message: "ok", data: application });
+        } else {
+          logger.error(`ApplicationController:submit::Error submitting application`);
+          next({ reqBody: req.body, org, user });
+        }
       } catch (err) {
-        logger.error(err);
+        logger.error(`ApplicationController::submit::error::`, err);
         next(err);
       }
     },

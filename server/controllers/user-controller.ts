@@ -28,7 +28,7 @@ function UserController() {
         const updatedUser = await UserService.updateDetails(userId, userDetails);
         logger.info("UserController:update:: User details updated!");
 
-        return res.status(200).json({  message: "ok",  data: updatedUser,});
+        return res.status(200).json({ message: "ok", data: updatedUser });
       } catch (err) {
         logger.error(err);
         next(err);

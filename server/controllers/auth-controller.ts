@@ -10,10 +10,20 @@ function AuthController() {
   const AuthService: AuthServiceI = Container.get("AuthService");
   const logger: Logger = Container.get("Logger");
 
+  const _isLoggedIn = (req: Request) => {
+    //@ts-ignore
+    return !!req.session.token;
+  };
+
   return {
     async register(req: Request, res: Response) {
       try {
-        logger.info("AuthController:register:: Starting response cycle");
+        logger.info("AuthController::register:: Starting response cycle");
+
+        if (_isLoggedIn(req)) {
+          logger.error("AuthController::register:: error CONFLICT");
+          return res.status(409).json({ error: `REGISTER::Session is already attached to request!!` });
+        }
 
         const { email, password, first_name } = req.body;
         const { user, token } = await AuthService.register(email, password, first_name);
@@ -21,10 +31,10 @@ function AuthController() {
         //@ts-ignore
         req.session.token = token;
 
-        logger.info("AuthController:register:: Success");
+        logger.info("AuthController::register::success");
         return res.status(200).json({ message: "success", data: user });
       } catch (e) {
-        logger.info(`AuthController:register:: ${e}`);
+        logger.info(`AuthController::register:: ${e}`);
         await req.session.destroy;
         return res.status(401).json({ error: `${e}` });
       }
@@ -34,9 +44,13 @@ function AuthController() {
       try {
         logger.info("AuthController:login:: Starting response cycle");
 
+        if (_isLoggedIn(req)) {
+          logger.error("AuthController::login:: error CONFLICT");
+          return res.status(409).json({ error: `LOGIN::Session is already attached to request!!` });
+        }
+
         const { email, password } = req.body;
-        const user = await AuthService.login(email, password);
-        const token = await AuthService.generateToken(user.id);
+        const { user, token } = await AuthService.login(email, password);
 
         //@ts-ignore
         req.session.token = token;

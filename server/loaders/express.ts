@@ -131,7 +131,7 @@ const buildServer = (server: Express) => {
     /********** Base error handler **********/
     server.use((err: APIError, req: Request, res: Response, next: any) => {
       //@ts-ignore
-      logger.error("BASE APIErrorHandler::", `${err}`);
+      logger.error(`BASEAPIErrorHandler::${err.name || "Unknown"}::${err.status || "500"}`);
 
       res.status(err.status || 500);
       res.json({

@@ -29,4 +29,7 @@ apiRouter.post("/application/submit", mw.isAuthenticated, ApplicationController.
 
 //Specialties Routes
 
+//Internal Routes
+apiRouter.post("/orgs/_seed", mw.isInternalAuthenticated, OrgsController.createSeedData);
+
 export default apiRouter;

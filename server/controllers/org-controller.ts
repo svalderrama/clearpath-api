@@ -1,6 +1,7 @@
 import { Container } from "typedi";
 import { Logger } from "winston";
 import { OrgServiceI } from "../services/org-service";
+import { CLEARPATH_DB_SEED } from "../models/seed/";
 
 function OrgsController() {
   const OrgService: OrgServiceI = Container.get("OrgService");
@@ -51,6 +52,31 @@ function OrgsController() {
         const convertedType = orgType.replace("-", "_");
 
         const orgs = await OrgService.getByOrgType(convertedType);
+
+        return res.status(200).json({
+          message: "ok",
+          count: orgs.length,
+          data: orgs,
+        });
+      } catch (err) {
+        logger.error(err);
+        next(err);
+      }
+    },
+
+    async createSeedData(req, res, next: (err: any) => void) {
+      try {
+        logger.info("OrgsController:createSeedData:: Starting response cycle");
+
+        //check count of DB before seeding!!
+        const dbEntries = await OrgService.getAll();
+        const isDBPopulated = dbEntries.length;
+
+        if (isDBPopulated) {
+          throw new Error("OrgsController:createSeedData:: Could not seed DB!! Entries already exists for org model");
+        }
+
+        const orgs = await OrgService.pushSeed(CLEARPATH_DB_SEED);
 
         return res.status(200).json({
           message: "ok",

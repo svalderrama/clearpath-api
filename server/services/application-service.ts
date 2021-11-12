@@ -39,7 +39,7 @@ class ApplicationService {
   public async hasPendingApp(userId: string, orgId: string) {
     return await Application.filter(userId, orgId)
       .then((apps: DBRecord<ApplicationI>[]) => {
-        const hasPendingApp = apps.length > 1;
+        const hasPendingApp = apps.length > 0;
         return !!hasPendingApp;
       })
       .catch((err) => {

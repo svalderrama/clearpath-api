@@ -18,7 +18,7 @@ class UserDBAdapter extends DBAdapter {
 
       return {
         /* ID come from Auto-generated id Firebase gives us*/
-        first_name: transformedResp.first_name,
+        firstName: transformedResp.first_name,
         email: transformedResp.email,
         id: queryResult.id,
       };

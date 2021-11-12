@@ -1,6 +1,6 @@
 import loadFirbaseAdmin from "../../loaders/firebase-admin/connect";
 import { ModelReference, QuerySetMany, DBRecord } from "../../utils/types";
-
+import { FieldPath } from "@google-cloud/firestore";
 interface FirebaseFirestoreAdapter {
   getDocById: (id: string) => Promise<any>;
   getAllDocs: () => Promise<any>;
@@ -20,11 +20,42 @@ export class DBAdapter implements FirebaseFirestoreAdapter {
     this.model = db.collection(modelName);
   }
 
+  /* Fix type */
+  async seedModel(data: any) {
+    const _addEntry = async (entry: any) => {
+      const queryResult = await this.model.add({ ...entry });
+      const transformedResp = await queryResult.get().then((res) => res.data());
+
+      return {
+        id: queryResult.id,
+        ...transformedResp,
+      };
+    };
+
+    if (Array.isArray(data)) {
+      const results = [];
+      data.forEach((datum) => {
+        const entry = _addEntry(datum);
+        results.push(entry);
+      });
+      return results;
+    } else {
+      return _addEntry(data);
+    }
+  }
+
   async getDocById(id: string) {
     return await this.model
-      .doc(id)
+      .where("__name__", "==", id)
       .get()
-      .then((res) => ({ id, ...res.data() }));
+      .then((queryResult: QuerySetMany<any>) => {
+        //Default result:
+        if (!queryResult.size) return null;
+
+        const rawData = queryResult.docs[0].data();
+        const result = { id: queryResult.docs[0].id, ...rawData };
+        return result;
+      });
   }
 
   async getAllDocs() {
