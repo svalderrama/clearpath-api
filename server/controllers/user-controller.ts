@@ -13,9 +13,41 @@ function UserController() {
       try {
         logger.info("UserController:update:: Starting response cycle");
 
-        const userDetails = req.body;
-        const userId = userDetails.id;
-        const user = await UserService.getById(userDetails.id);
+        console.log("transformedBody", req.body);
+
+        // const { userId } = req.params;
+        // const user = await UserService.getById(userId);
+
+        // const userDetails = req.body;
+
+        // if (!user) {
+        //   return next({
+        //     error: "UserController:update::Bad Request: User does not exist",
+        //   });
+        // }
+
+        // delete userDetails.id;
+
+        // const updatedUser = await UserService.updateDetails(userId, userDetails);
+
+        // delete updatedUser.password;
+
+        // logger.info("UserController:update:: User details updated!");
+        return res.status(200).json({ message: "ok" });
+        // return res.status(200).json({ message: "ok", user: updatedUser });
+      } catch (err) {
+        logger.error(err);
+        next(err);
+      }
+    },
+
+    async showOne(req, res, next: (err: any) => void) {
+      /* Get one Organization by ID */
+      try {
+        logger.info("OrgsController:showOne:: Starting response cycle");
+
+        const { userId } = req.params;
+        const user = await UserService.getById(userId);
 
         if (!user) {
           return next({
@@ -23,12 +55,12 @@ function UserController() {
           });
         }
 
-        delete userDetails.id;
+        delete user.password;
 
-        const updatedUser = await UserService.updateDetails(userId, userDetails);
-        logger.info("UserController:update:: User details updated!");
-
-        return res.status(200).json({ message: "ok", data: updatedUser });
+        return res.status(200).json({
+          message: "ok",
+          user,
+        });
       } catch (err) {
         logger.error(err);
         next(err);

@@ -4,11 +4,13 @@ import { Container } from "typedi";
 import express from "express";
 import session from "express-session";
 
-import winston from "winston";
+import winston, { Logger } from "winston";
 import expressWinston from "express-winston";
 import { errors as JoiErrors } from "celebrate";
 
 import uidSafe from "uid-safe";
+
+import helmet from "helmet";
 
 import type { Request, Response, Express } from "express";
 
@@ -20,6 +22,7 @@ import { Firestore } from "@google-cloud/firestore";
 import { FirestoreStore } from "@google-cloud/connect-firestore";
 
 import firebaseLoader from "../loaders/firebase-admin/connect";
+import cookieParser from "cookie-parser";
 
 const db = firebaseLoader.firestore();
 
@@ -33,8 +36,25 @@ declare module "express-session" {
 const buildServer = (server: Express) => {
   /**********  Apply Base Middlewares **********/
   const applyMiddleWares = (server: Express) => {
+    const logger: Logger = Container.get("Logger");
     /** CORS middleware */
-    server.use(cors());
+    server.use(
+      cors({
+        origin: [
+          "http://localhost:3000",
+          "https://dev-clearpath.web.app/",
+          "https://clearpathnyc.com/",
+          "https://clearpathnyc.org/",
+        ],
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+        preflightContinue: false,
+        optionsSuccessStatus: 204,
+        credentials: true,
+      }),
+    );
+
+    /** Helmet middleware */
+    server.use(helmet());
 
     /* Useful since we are behind  a reverse proxy (Heroku)
      * It shows the real origin IP in the heroku logs
@@ -58,11 +78,13 @@ const buildServer = (server: Express) => {
         secret: Container.get("SESSION_SECRET_KEY"),
         resave: false,
         saveUninitialized: false,
-        cookie: { maxAge: SESSION_MAX_AGE },
+        // cookie: { maxAge: SESSION_MAX_AGE },
       }),
     );
     /* Serve static files */
     // server.use(express.static(assetsDir));
+
+    server.use(cookieParser(Container.get("SESSION_SECRET_KEY")));
 
     server.use(express.urlencoded({ extended: true }));
 
@@ -101,7 +123,7 @@ const buildServer = (server: Express) => {
 
   /********** Catch 404 and forward to error handler **********/
   const attachErrorHandlers = (server: Express) => {
-    const logger = Container.get("Logger");
+    const logger: Logger = Container.get("Logger");
 
     /* Allow winston to log errors */
     server.use(
@@ -115,23 +137,15 @@ const buildServer = (server: Express) => {
     server.use(JoiErrors());
 
     server.use("*", (req, res, next) => {
-      const err: APIError = {
-        ...new Error("Not Found"),
-        status: 404,
-      };
-
-      //@ts-ignore
-      logger.error("APIErrorHandler::", err);
+      logger.error("APIErrorHandler::Bad Request");
       return res.status(404).json({
-        error: err,
-        message: err.message,
+        message: "Not Found",
       });
     });
 
-    /********** Base error handler **********/
+    // /********** Base error handler **********/
     server.use((err: APIError, req: Request, res: Response, next: any) => {
-      //@ts-ignore
-      logger.error(`BASEAPIErrorHandler::${err.name || "Unknown"}::${err.status || "500"}`);
+      logger.error(`APIErrorHandler::${err.name || "Unknown"}::${err.status || "500"}`);
 
       res.status(err.status || 500);
       res.json({
@@ -140,6 +154,13 @@ const buildServer = (server: Express) => {
         },
       });
     });
+
+    // server.use("*", (req, res, next) => {
+    //   logger.error("APIErrorHandler::Bad Request");
+    //   return res.status(404).json({
+    //     message: "Not Found",
+    //   });
+    // });
   };
 
   /********* Build Server *********/

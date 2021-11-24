@@ -1,5 +1,6 @@
 import * as argon2 from "argon2";
-import * as jwt from "jsonwebtoken";
+import { Request, Response } from "express";
+import jwt, { Jwt } from "jsonwebtoken";
 import { Service, Inject } from "typedi";
 import { SESSION_MAX_AGE } from "../config";
 
@@ -13,14 +14,19 @@ export interface AuthServiceI {
    * fix types below!
    */
   register(email: string, password: string, firstName: string): any;
-  login(email: string, password: string): any;
+  createSession(email: string, password: string): any;
   generateToken(userId: string, isInternal: boolean): any;
   isInternalUser(token: string): any;
+  isAuthenticated(req: Request): boolean;
+  attachSignedCookie(res: Response, token: string): void;
+  isTokenExpired(jwt: Jwt): boolean;
+  refreshFromSession(req: Request);
 }
 
 @Service("AuthService")
 class AuthService implements AuthServiceI {
   #JWTSignature: string;
+  #tokenIdentifier: string;
 
   constructor(
     @Inject("JWT_PRIVATE_KEY") JWT_PRIVATE_KEY: string,
@@ -30,18 +36,59 @@ class AuthService implements AuthServiceI {
     this.logger = logger;
     this.UserService = UserService;
     this.#JWTSignature = JWT_PRIVATE_KEY;
+    this.#tokenIdentifier = "clrpth:ath:tkn";
   }
 
-  private async _sanitizeData(data) {
+  private _sanitizeData(data) {
     if (data.password) {
       delete data.password;
     }
     return data;
   }
 
+  public isTokenExpired = (jwt: Jwt) => {
+    /* Check that session has not expired */
+    const expiry = jwt.payload.exp;
+    const todaysDate = new Date().getTime();
+    const expired = expiry < todaysDate;
+
+    if (expired) {
+      this.logger.error(`AuthService:: Token has expired!: \n
+      Expiry: ${new Date(expiry).toLocaleString().split(",")[0]}`);
+      return true;
+    }
+    return false;
+  };
+
+  public isAuthenticated(req: Request) {
+    //@ts-ignore
+    const sessionToken = req.session.token;
+    const signedCookieJWT = req.signedCookies[this.#tokenIdentifier];
+    const bearerToken = req.headers.authorization;
+    const tokensMatch = signedCookieJWT === bearerToken && signedCookieJWT === sessionToken;
+    const missingToken = !signedCookieJWT || !sessionToken || !bearerToken;
+
+    if (!tokensMatch || missingToken) {
+      return false;
+    }
+
+    const tokens = [signedCookieJWT, bearerToken, sessionToken];
+    let passChecks = true;
+
+    for (let i: number = 0; i < tokens.length; i++) {
+      //@ts-ignore
+      const verifiedToken: Jwt = jwt.verify(tokens[i], this.#JWTSignature, { complete: true });
+      const isExpired = this.isTokenExpired(verifiedToken);
+      if (isExpired) passChecks = false;
+      break;
+    }
+    return passChecks;
+  }
+
   public generateToken(userId: string, isInternal = false) {
     //TODO: implement anon data; Should we decrease the session expiration?
-    return jwt.sign({ id: userId, isAnon: false, isInternal }, this.#JWTSignature, {
+    /* User info is used by passport strategy */
+    return jwt.sign({ user: { id: userId, isAnon: false, isInternal } }, this.#JWTSignature, {
       expiresIn: SESSION_MAX_AGE,
     });
   }
@@ -55,6 +102,27 @@ class AuthService implements AuthServiceI {
     } else {
       return false;
     }
+  }
+
+  public attachSignedCookie(res: Response, token: string) {
+    //move to config
+    res.cookie(this.#tokenIdentifier, token, {
+      httpOnly: true,
+      sameSite: false,
+      signed: true,
+      secure: true,
+    });
+  }
+
+  public async refreshFromSession(req: Request) {
+    const signedCookieJWT = req.signedCookies[this.#tokenIdentifier];
+    //@ts-ignore
+    const verifiedToken: Jwt = jwt.verify(signedCookieJWT, this.#JWTSignature, { complete: true });
+    const userId = verifiedToken.payload.user.id;
+
+    const userDetails = await this.UserService.getById(userId);
+
+    return { user: this._sanitizeData(userDetails), token: signedCookieJWT };
   }
 
   public async register(email: string, password: string, firstName: string): Promise<any> {
@@ -78,27 +146,27 @@ class AuthService implements AuthServiceI {
     };
   }
 
-  public async login(email: string, password: string): Promise<any> {
+  public async createSession(email: string, password: string): Promise<any> {
     try {
-      this.logger.info("AuthService:login:: checking if user exists...");
+      this.logger.info("AuthService:createSession:: checking if user exists...");
 
       const userRecord = await this.UserService.getByEmail(email);
 
       if (!userRecord) {
         const error = "User does not exist!";
-        this.logger.info(`AuthService:register::failed::${error}`);
+        this.logger.info(`AuthService:createSession::failed::${error}`);
         //TODO: Set error code
         throw new Error(error);
       } else {
         const passwordVerified = await argon2.verify(userRecord.password, password);
         if (!passwordVerified) {
-          this.logger.info("AuthService:register::failed:: Incorrect password");
+          this.logger.info("AuthService:createSession::failed:: Incorrect password");
           //TODO: Set different error code
           throw new Error("Incorrect password");
         }
       }
 
-      this.logger.info("AuthService:login::success:: User verified");
+      this.logger.info("AuthService:createSession::success:: User verified", userRecord);
       return {
         user: this._sanitizeData(userRecord),
         token: this.generateToken(userRecord.id, userRecord.internal_user),

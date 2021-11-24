@@ -11,7 +11,7 @@ export default [
     age_upper: 19,
     email: "bmccstep@gmail.com",
     contact_number: null,
-    org_type: "academic_development",
+    org_type: "academic",
     requirements:
       "To join STEP you MUST: \n\nBe a NYC HIGH SCHOOL STUDENT, and\nBe a NY STATE RESIDENT (have lived in NY state for 1+ years), and\nSubmit ECONOMIC ELIGIBILITY DOCUMENTATION.  \n\nALL applying students MUST a copy of the appropriate documentation to verify economic eligibility. Appropriate documentation includes the one (1) following:\n\nProof of FREE or REDUCED LUNCH, or\nProof of PUBLIC ASSISTANCE, or\n(family) TAX RETURN showing adjusted gross income. \nPlease see income qualifications:https://www.bmcc.cuny.edu/academics/faculty-affairs/research-and-scholarly-inquiry/student-research-opportunities/economic-eligibility/           Please send pages 1 & 2, which show the household size and adjusted gross income \nAll required documents should be labeled with the student’s name and delivered by:\n\nscanning & emailing to bmccstep@gmail.com, ",
   },
@@ -27,7 +27,7 @@ export default [
     age_upper: 19,
     email: "CollegeNow@baruch.cuny.edu",
     contact_number: null,
-    org_type: "academic_development",
+    org_type: "academic",
     requirements: null,
   },
   {
@@ -42,7 +42,7 @@ export default [
     age_upper: 19,
     email: "emmendez@hunter.cuny.edu",
     contact_number: null,
-    org_type: "academic_development",
+    org_type: "academic",
     requirements: null,
   },
   {
@@ -57,7 +57,7 @@ export default [
     age_upper: null,
     email: null,
     contact_number: null,
-    org_type: "academic_development",
+    org_type: "academic",
     requirements: null,
   },
   {
@@ -72,7 +72,7 @@ export default [
     age_upper: 17,
     email: "contact@hfhnyc.org",
     contact_number: "(212) 529-5252",
-    org_type: "academic_development",
+    org_type: "academic",
     requirements: null,
   },
   {
@@ -87,7 +87,7 @@ export default [
     age_upper: null,
     email: "info@pfth.org",
     contact_number: "(212) 645-3444",
-    org_type: "academic_development",
+    org_type: "academic",
     requirements: null,
   },
   {
@@ -102,7 +102,7 @@ export default [
     age_upper: 24,
     email: "Waiting for Reponse",
     contact_number: null,
-    org_type: "academic_development",
+    org_type: "academic",
     requirements: null,
   },
   {
@@ -117,7 +117,7 @@ export default [
     age_upper: 24,
     email: "info@yayb.org",
     contact_number: null,
-    org_type: "academic_development",
+    org_type: "academic",
     requirements: null,
   },
 ];

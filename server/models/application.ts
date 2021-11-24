@@ -15,7 +15,7 @@ class ApplicationDBAdapter extends DBAdapter {
           org_id,
           org_name,
           message: message || null,
-          status: "submitted",
+          status: "pending",
         })
         .then(async (queryResult: DBRecord<any>) => {
           //TODO: Re-factor to common

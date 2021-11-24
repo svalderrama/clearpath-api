@@ -11,7 +11,7 @@ export default [
     age_upper: 24,
     email: null,
     contact_number: "(212) 206-0574",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -26,7 +26,7 @@ export default [
     age_upper: null,
     email: "outreachteam@urbanpathways.org",
     contact_number: "212-947-3211",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -41,7 +41,7 @@ export default [
     age_upper: null,
     email: null,
     contact_number: "212-674-3456",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -56,7 +56,7 @@ export default [
     age_upper: 20,
     contact_number: null,
     email: "info@covenanthouse.org",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -71,7 +71,7 @@ export default [
     age_upper: null,
     email: null,
     contact_number: "(212) 475-4245",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: "Must have been referred by the New York City Administration for Children’s Services.",
   },
   {
@@ -86,7 +86,7 @@ export default [
     age_upper: null,
     email: "heatprogram450@gmail.com",
     contact_number: "(718) 613-8543",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -101,7 +101,7 @@ export default [
     age_upper: null,
     email: "contact@hfhnyc.org",
     contact_number: "(212) 529-5252",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -116,7 +116,7 @@ export default [
     age_upper: null,
     email: "info@iclinc.org",
     contact_number: null,
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -131,7 +131,7 @@ export default [
     age_upper: null,
     email: " info@mytherapynyc.com",
     contact_number: " 646-449-0491",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -146,7 +146,7 @@ export default [
     age_upper: null,
     email: "info@newalternativesnyc.org",
     contact_number: "(718) 300-0133",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -161,7 +161,7 @@ export default [
     age_upper: null,
     email: null,
     contact_number: "888-692-9355",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -176,7 +176,7 @@ export default [
     age_upper: null,
     email: "info@pfth.org",
     contact_number: "(212) 645-3444",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -188,7 +188,7 @@ export default [
     contact_number: null,
     description: null,
     email: null,
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     specialty: null,
     url: null,
     requirements: null,
@@ -202,7 +202,7 @@ export default [
     contact_number: null,
     description: null,
     email: null,
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     specialty: null,
     url: null,
     requirements: null,
@@ -219,7 +219,7 @@ export default [
     age_upper: 25,
     email: "Website@safehorizon.com (will update if neccessary)",
     contact_number: null,
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -234,7 +234,7 @@ export default [
     age_upper: null,
     email: "elizabeth@yogaformentalwellness.org",
     contact_number: "551-358-2269",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -249,7 +249,7 @@ export default [
     age_upper: null,
     email: "simperati@door.org",
     contact_number: "212-941-9090 Ext: 3522",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -264,7 +264,7 @@ export default [
     age_upper: 24,
     email: null,
     contact_number: null,
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -279,7 +279,7 @@ export default [
     age_upper: 26,
     email: "Waiting for email",
     contact_number: "212.398.3074",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -295,7 +295,7 @@ export default [
     age_upper: 20,
     email: null,
     contact_number: "212.620.7310",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -310,7 +310,7 @@ export default [
     age_upper: null,
     email: "book@ReciprocityFoundation.org",
     contact_number: null,
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -325,7 +325,7 @@ export default [
     age_upper: null,
     email: "info@vitacenterny.org",
     contact_number: "(718) 880-7321",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -340,7 +340,7 @@ export default [
     age_upper: 24,
     email: null,
     contact_number: "(212) 263-1534",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
   {
@@ -355,7 +355,7 @@ export default [
     age_upper: null,
     email: null,
     contact_number: "(212) 366-4459",
-    org_type: "mental_wellness",
+    org_type: "mentalWellness",
     requirements: null,
   },
 ];

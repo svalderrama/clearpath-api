@@ -3,7 +3,7 @@ import { Service } from "typedi";
 import Application from "../models/application";
 import type { QuerySet, DBRecord, ApplicationI } from "../utils/types";
 
-export interface ApplicationServiceI {
+interface ApplicationService {
   create(userId, orgId, orgName, message);
   getById(id: string);
   getUserApplications(userId: string);
@@ -11,7 +11,23 @@ export interface ApplicationServiceI {
 }
 
 @Service("ApplicationService")
-class ApplicationService {
+class ApplicationService implements ApplicationService {
+  private _aggregateAppStatus(apps) {
+    const result = {
+      pending: 0,
+      declined: 0,
+      completed: 0,
+      submitted: 0,
+    };
+
+    apps.forEach((app) => {
+      const status = app["status"];
+      result[status]++;
+    });
+
+    return result;
+  }
+
   public async create(userId, orgId, orgName, message) {
     return await Application.create(userId, orgId, orgName, message)
       .then((app: ApplicationI) => app)
@@ -31,6 +47,12 @@ class ApplicationService {
   public async getUserApplications(userId: string) {
     return await Application.getAllByUserId(userId)
       .then((userApps: DBRecord<ApplicationI>[]) => userApps)
+      .then((userApps) => {
+        return {
+          applications: userApps,
+          stats: this._aggregateAppStatus(userApps),
+        };
+      })
       .catch((err) => {
         throw Error(err);
       });

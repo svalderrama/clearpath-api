@@ -4,14 +4,14 @@ import { Logger } from "winston";
 import { OrgServiceI } from "../services/org-service";
 import { UserServiceI } from "../services/user-service";
 import { EmailServiceI } from "../services/email";
-import { ApplicationServiceI } from "../services/application-service";
+import ApplicationService from "../services/application-service";
 
 function ApplicationController() {
   const logger: Logger = Container.get("Logger");
   const OrgService: OrgServiceI = Container.get("OrgService");
   const UserService: UserServiceI = Container.get("UserService");
   const EmailService: EmailServiceI = Container.get("EmailService");
-  const ApplicationService: ApplicationServiceI = Container.get("ApplicationService");
+  const ApplicationService: ApplicationService = Container.get("ApplicationService");
 
   return {
     /* Submit a user application */
@@ -44,7 +44,7 @@ function ApplicationController() {
           const application = await ApplicationService.create(userId, orgId, org.name, message);
 
           logger.info(`ApplicationController::submit::success:: Application submitted`, { userId, orgId });
-          return res.status(200).json({ message: "ok", data: application });
+          return res.status(200).json({ message: "ok", application });
         } else {
           logger.error(`ApplicationController:submit::Error submitting application`);
           next({ reqBody: req.body, org, user });
@@ -60,11 +60,13 @@ function ApplicationController() {
         const { userId } = req.params;
 
         logger.info(`ApplicationController:showAll:: Retrieving all user apps`);
-        const applications = await ApplicationService.getUserApplications(userId);
+        const { applications, stats } = await ApplicationService.getUserApplications(userId);
 
         return res.status(200).json({
           message: "ok",
-          data: applications,
+          applications,
+          stats,
+          total: applications.length,
         });
       } catch (err) {
         logger.error(err);

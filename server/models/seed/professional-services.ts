@@ -13,7 +13,7 @@ export default [
     contact_number: null,
     requirements:
       "High School(not required to be enrolled in school) age; Male;Preference given to Black & Latino applicants; No coding experience necessary; Only 40 students accepted per year.",
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Beginning with Children: College Prep Afterschool Program",
@@ -28,7 +28,7 @@ export default [
     email: "legacynetwork@bwcf.org",
     contact_number: null,
     requirements: "High School students who live or attend school in Brooklyn.",
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "BRC",
@@ -42,7 +42,7 @@ export default [
     email: "info@brc.org",
     contact_number: null,
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Bronx Junior Photo League at the Bronx Documentary Center",
@@ -57,7 +57,7 @@ export default [
     email: "INFO@BRONXDOC.ORG",
     contact_number: "718.993.3512",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Brooklyn Museum Work-Study and Art Classes",
@@ -72,7 +72,7 @@ export default [
     email: "gallery-studio@brooklynmuseum.org",
     contact_number: "718.638.5000",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Codecademy",
@@ -87,7 +87,7 @@ export default [
     email: null,
     contact_number: null,
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "CoLab by CultureHub",
@@ -102,7 +102,7 @@ export default [
     email: "colab@culturehub.org",
     contact_number: "917 463 3917",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Institute for Career Development",
@@ -117,7 +117,7 @@ export default [
     email: null,
     contact_number: "(212) 585-6000",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Made in NY Building Animation Skills @ NeON Centers",
@@ -132,7 +132,7 @@ export default [
     email: "group@theanimationproject.org.",
     contact_number: "(917) 282-0933",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Made in NY Building Animation Skills @ NeON Centers",
@@ -147,7 +147,7 @@ export default [
     email: "group@theanimationproject.org.",
     contact_number: "(917) 282-0931",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Made in NY Building Animation Skills @ NeON Centers",
@@ -162,7 +162,7 @@ export default [
     email: "group@theanimationproject.org.",
     contact_number: "(917) 282-0932",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Made in NY Building Animation Skills @ NeON Centers",
@@ -177,7 +177,7 @@ export default [
     email: "group@theanimationproject.org.",
     contact_number: "(917) 282-0935",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Made in NY Building Animation Skills @ NeON Centers",
@@ -192,7 +192,7 @@ export default [
     email: "group@theanimationproject.org.",
     contact_number: "(917) 282-0934",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Made in NY Post Production Training Program",
@@ -207,7 +207,7 @@ export default [
     email: "post@bwiny.org",
     contact_number: "347-470-3231.",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Made in NY Production Assistant Training Program",
@@ -222,7 +222,7 @@ export default [
     email: "pa@bwiny.org",
     contact_number: "718-237-2017 x 145",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Made in NY Writer's Room",
@@ -237,7 +237,7 @@ export default [
     email: null,
     contact_number: "212-767-7800",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Patnership for the Homeless",
@@ -252,7 +252,7 @@ export default [
     email: "info@pfth.org",
     contact_number: "(212) 645-3444",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Sound Thinking NYC",
@@ -267,7 +267,7 @@ export default [
     email: "applications@soundthinkingnyc.org",
     contact_number: "(212) 652-2832",
     requirements: "10th-12th grade",
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "The Association of Community Employment Programs for the Homeless (ACE)",
@@ -282,7 +282,7 @@ export default [
     email: "emcnierney@acenewyork.org",
     contact_number: null,
     requirements: "Applicants must be at least 18 years of age and a U.S. citizen or legal resident.",
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "The Door",
@@ -297,7 +297,7 @@ export default [
     email: null,
     contact_number: null,
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "The Lantern Community",
@@ -312,7 +312,7 @@ export default [
     email: "Waiting for email",
     contact_number: "212.398.3071",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Vita Teaching for Children",
@@ -327,7 +327,7 @@ export default [
     email: "info@vitacenterny.org",
     contact_number: "(718) 880-7321",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "Vita: Workforce Development Program",
@@ -342,7 +342,7 @@ export default [
     email: "info@vitacenterny.org",
     contact_number: "(718) 880-7321",
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
   {
     name: "YearUp",
@@ -357,6 +357,6 @@ export default [
     email: "yearupinfo@yearup.org",
     contact_number: null,
     requirements: null,
-    org_type: "professional_services",
+    org_type: "professionalServices",
   },
 ];

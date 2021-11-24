@@ -21,20 +21,18 @@ const validateLoginPost = (req, res, next) =>
 const validateUserDetailsPut = (req, res, next) =>
   celebrate({
     [Segments.BODY]: Joi.object({
-      id: Joi.string().required(),
-      email: Joi.string(),
       race: Joi.string(),
       sexuality: Joi.string(),
       gender: Joi.string(),
       dob: Joi.string(),
-      first_name: Joi.string(),
-      last_name: Joi.string(),
-      prior_academics: Joi.object().keys({
+      firstName: Joi.string(),
+      lastName: Joi.string(),
+      priorAcademics: Joi.object().keys({
         level: Joi.string(),
         school: Joi.string(),
         department: Joi.string(),
         specialization: Joi.string(),
-        year_of_grad: Joi.string(),
+        yearfGrad: Joi.string(),
       }),
     }),
   })(req, res, next);

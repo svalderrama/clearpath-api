@@ -20,6 +20,36 @@ export class DBAdapter implements FirebaseFirestoreAdapter {
     this.model = db.collection(modelName);
   }
 
+  snakeToCamel(str: string) {
+    if (!/[_-]/.test(str)) return str;
+    const camelStr = str.toLowerCase().replace(/[-_][a-z]/g, (group) => group.slice(-1).toUpperCase());
+    return camelStr;
+  }
+
+  snakeToCamelObj(inputObj: object) {
+    /* Async behvior causes this to be null sometimes. So short-circuit*/
+    if (!inputObj) return;
+
+    const resultObj = {};
+    const keys: string[] = Object.keys(inputObj);
+
+    keys.forEach((key) => {
+      const valueType = typeof inputObj[key];
+      const valueIsArray = Array.isArray(valueType);
+      const valueIsObject = !valueIsArray && valueType === "object";
+
+      const camelStr = this.snakeToCamel(key);
+
+      if (valueIsObject) {
+        resultObj[camelStr] = this.snakeToCamelObj(inputObj[key]);
+      } else {
+        resultObj[camelStr] = inputObj[key];
+      }
+    });
+
+    return resultObj;
+  }
+
   /* Fix type */
   async seedModel(data: any) {
     const _addEntry = async (entry: any) => {
@@ -53,7 +83,8 @@ export class DBAdapter implements FirebaseFirestoreAdapter {
         if (!queryResult.size) return null;
 
         const rawData = queryResult.docs[0].data();
-        const result = { id: queryResult.docs[0].id, ...rawData };
+        const transformedData = this.snakeToCamelObj(rawData);
+        const result = { id: queryResult.docs[0].id, ...transformedData };
         return result;
       });
   }
@@ -65,9 +96,12 @@ export class DBAdapter implements FirebaseFirestoreAdapter {
       const records: DBRecord<any>[] = [];
 
       if (queryResult && queryResult.docs && queryResult.docs.length) {
-        queryResult.docs.forEach((doc) => {
-          const rawData = doc.data();
-          records.push({ id: doc.id, ...rawData });
+        queryResult.docs.forEach(async (doc) => {
+          const rawData = await doc.data();
+          if (rawData) {
+            const transformedData = await this.snakeToCamelObj(rawData);
+            records.push({ id: doc.id, ...transformedData });
+          }
         });
       }
 
@@ -84,7 +118,8 @@ export class DBAdapter implements FirebaseFirestoreAdapter {
         if (!queryResult.size) return null;
 
         const rawData = queryResult.docs[0].data();
-        return { id: queryResult.docs[0].id, ...rawData };
+        const transformedData = this.snakeToCamelObj(rawData);
+        return { id: queryResult.docs[0].id, ...transformedData };
       });
   }
 
@@ -97,9 +132,12 @@ export class DBAdapter implements FirebaseFirestoreAdapter {
         const records: DBRecord<any>[] = [];
 
         if (queryResult && queryResult.docs && queryResult.docs.length) {
-          queryResult.docs.forEach((doc) => {
+          queryResult.docs.forEach(async (doc) => {
             const rawData = doc.data();
-            records.push({ id: doc.id, ...rawData });
+            if (rawData) {
+              const transformedData = await this.snakeToCamelObj(rawData);
+              records.push({ id: doc.id, ...transformedData });
+            }
           });
         }
 

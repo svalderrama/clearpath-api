@@ -18,7 +18,7 @@ function OrgsController() {
         return res.status(200).json({
           message: "ok",
           count: orgs.length,
-          data: orgs,
+          orgs,
         });
       } catch (err) {
         logger.error(err);
@@ -36,7 +36,7 @@ function OrgsController() {
 
         return res.status(200).json({
           message: "ok",
-          data: org,
+          org,
         });
       } catch (err) {
         logger.error(err);
@@ -56,7 +56,7 @@ function OrgsController() {
         return res.status(200).json({
           message: "ok",
           count: orgs.length,
-          data: orgs,
+          orgs,
         });
       } catch (err) {
         logger.error(err);
