@@ -42,9 +42,9 @@ const buildServer = (server: Express) => {
       cors({
         origin: [
           "http://localhost:3000",
-          "https://dev-clearpath.web.app/",
-          "https://clearpathnyc.com/",
-          "https://clearpathnyc.org/",
+          "https://dev-clearpath.web.app",
+          "https://clearpathnyc.com",
+          "https://clearpathnyc.org",
         ],
         methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
         preflightContinue: false,
