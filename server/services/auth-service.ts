@@ -61,18 +61,17 @@ class AuthService implements AuthServiceI {
   };
 
   public isAuthenticated(req: Request) {
-    //@ts-ignore
-    const sessionToken = req.session.token;
     const signedCookieJWT = req.signedCookies[this.#tokenIdentifier];
     const bearerToken = req.headers.authorization;
-    const tokensMatch = signedCookieJWT === bearerToken && signedCookieJWT === sessionToken;
-    const missingToken = !signedCookieJWT || !sessionToken || !bearerToken;
+
+    const tokensMatch = signedCookieJWT === bearerToken;
+    const missingToken = !signedCookieJWT || !bearerToken;
 
     if (!tokensMatch || missingToken) {
       return false;
     }
 
-    const tokens = [signedCookieJWT, bearerToken, sessionToken];
+    const tokens = [signedCookieJWT, bearerToken];
     let passChecks = true;
 
     for (let i: number = 0; i < tokens.length; i++) {
@@ -88,6 +87,7 @@ class AuthService implements AuthServiceI {
   public generateToken(userId: string, isInternal = false) {
     //TODO: implement anon data; Should we decrease the session expiration?
     /* User info is used by passport strategy */
+    /* Add session iD */
     return jwt.sign({ user: { id: userId, isAnon: false, isInternal } }, this.#JWTSignature, {
       expiresIn: SESSION_MAX_AGE,
     });
@@ -108,7 +108,7 @@ class AuthService implements AuthServiceI {
     //move to config
     res.cookie(this.#tokenIdentifier, token, {
       httpOnly: true,
-      sameSite: false,
+      sameSite: "none",
       signed: true,
       secure: true,
     });

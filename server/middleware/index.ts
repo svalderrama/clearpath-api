@@ -15,8 +15,9 @@ const isAuthRequest = (req, res, next) => {
 };
 
 const isInternalAuthRequest = (req, res, next) => {
-  if (req.session && req.session.token) {
+  if (req.session) {
     const AuthService: AuthServiceI = Container.get("AuthService");
+    //FIXME
     const isInternalUser = AuthService.isInternalUser(req.session.token);
 
     if (isInternalUser) next();

@@ -23,9 +23,6 @@ function AuthController() {
         const { email, password, first_name } = req.body;
         const { user, token } = await AuthService.register(email, password, first_name);
 
-        //@ts-ignore
-        req.session.token = token;
-
         logger.info("AuthController::register::success");
         return res.status(200).json({ message: "success", data: user });
       } catch (e) {
@@ -48,9 +45,6 @@ function AuthController() {
         const { user, token } = await AuthService.createSession(email, password);
 
         let _ = AuthService.attachSignedCookie(res, token);
-
-        //@ts-ignore
-        req.session.token = token;
 
         logger.info("AuthController:login:: Success");
         return res.status(200).json({ message: "success", user, token });

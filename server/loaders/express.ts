@@ -78,7 +78,7 @@ const buildServer = (server: Express) => {
         secret: Container.get("SESSION_SECRET_KEY"),
         resave: false,
         saveUninitialized: false,
-        // cookie: { maxAge: SESSION_MAX_AGE },
+        cookie: { maxAge: SESSION_MAX_AGE },
       }),
     );
     /* Serve static files */
