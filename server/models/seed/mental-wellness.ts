@@ -290,7 +290,6 @@ export default [
       "Mental health assistance to LGBT youth, as well as treatment for substance abuse and treatment programs for safe drug usage. ",
     url: "https://gaycenter.org/family-youth/youth/",
     specialty: "LGBTQ+ Youth",
-    "Age Range": "13-20",
     age_lower: 13,
     age_upper: 20,
     email: null,
