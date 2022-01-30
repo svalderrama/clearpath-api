@@ -12,7 +12,7 @@ export default [
     email: "admissions@allstarcode.org",
     contact_number: null,
     requirements:
-      "High School(not required to be enrolled in school) age; Male;Preference given to Black & Latino applicants; No coding experience necessary; Only 40 students accepted per year.",
+      "High School (not required to be enrolled in school) age; Male; Preference given to Black & Latino applicants; No coding experience necessary; Only 40 students accepted per year.",
     org_type: "professionalServices",
   },
   {
@@ -49,7 +49,7 @@ export default [
     address: "BRONX DOCUMENTARY CENTER, 614 COURTLANDT AVENUE, BRONX, NY 10451",
     borough: "Bronx",
     description:
-      "The Bronx Junior Photo League (BJPL) is a free photography and journalism program serving middle through high school students.\n\nTheir free afterschool and summer photojournalism programs teach middle and high school Bronx students to use photography, writing, and research to explore social justice issues, preparing them for college and future careers. The program includes visits with internationally-renowned photographers, field trips to major cultural institutions and media outlets, and opportunities for life-changing international travel. Students and families participate in extensive college prep programming, including one-on-one counseling, financial aid workshops, and college tours.",
+      "The Bronx Junior Photo League (BJPL) is a free photography and journalism program serving middle through high school students.\n\nTheir free afterschool and summer photojournalism programs teach middle and high school Bronx students to use photography, writing, and research to explore social justice issues, preparing them for college and future careers. The program includes visits with internationally-renowned photographers, field trips to major cultural institutions and media outlets, and opportunities for life-changing international travel. Students and families participate in extensive college prep programming, including one-on-one counseling, financial aid workshops, and college tours. Applications for 2022 open on 5/22.",
     url: "https://www.bronxdoc.org/education/bronx-junior-photo-league",
     specialty: "Youth",
     age_lower: 13,
@@ -75,6 +75,21 @@ export default [
     org_type: "professionalServices",
   },
   {
+    name: "CAMBA Learning to Work Program",
+    address: "1720 Church Ave, Brooklyn, NY, 11226",
+    borough: "Brooklyn",
+    description:
+      "CAMBA’s Learning to Work (LTW) program helps to re-engage students who have dropped out or fallen behind in credits to graduate high school. LTW programs are offered at ten transfer high schools and one Young Adult Borough Center (YABC). Transfer high schools are small, full-time high schools designed to motivate students who have fallen behind in credits. YABCs offer evening academic programs for high school students who cannot attend during the day. We provide a wide range of diverse programming including academic and student support, career and educational development, college advising and preparation, work preparation, skills development, and paid internships with companies like Edible Arrangements, BRIC, Vibe Magazine and many more.",
+    url: "https://camba.org/programs/learning-to-work/",
+    specialty: "Young Adult",
+    age_lower: 16,
+    age_upper: null,
+    email: "info@camba.org",
+    contact_number: "718.226.0436",
+    requirements: null,
+    org_type: "professionalServices",
+  },  
+{
     name: "Codecademy",
     address: "Online",
     borough: "Online",
@@ -94,7 +109,7 @@ export default [
     address: "47 Great Jones St, New York, NY 10012",
     borough: "Manhattan",
     description:
-      "CoLab offers free summer workshops for young artists ages 14–19 who want to explore new ways of combining art and technology. In each workshop, participants meet and work with a teaching artist who introduces new tools and creative approaches. In a fun and interactive setting, young artists will put their own spin on technology to create an original work of art",
+      "Runs through the month of July. CoLab offers free summer workshops for young artists ages 14–19 who want to explore new ways of combining art and technology. In each workshop, participants meet and work with a teaching artist who introduces new tools and creative approaches. In a fun and interactive setting, young artists will put their own spin on technology to create an original work of art",
     url: "https://www.culturehub.org/colab",
     specialty: "High School",
     age_lower: 14,
@@ -240,7 +255,7 @@ export default [
     org_type: "professionalServices",
   },
   {
-    name: "Patnership for the Homeless",
+    name: "Partnership for the Homeless",
     address: "305 7th Ave, New York, NY 10001",
     borough: "Manhattan",
     description:
@@ -274,7 +289,7 @@ export default [
     address: "30-30 Northern Blvd., Ste. B100, Long Island City, NY 11101",
     borough: "Queens",
     description:
-      "Project Comeback- \nA 4-6 month vocational rehabilitation program that provides recovering homeless individuals with the skills, support services and motivation they need to obtain and sustain full-time employment and economic independence.\n\nParticipants receive job-readiness training, supported work experience (providing maintenance services to New York City streets and parks), Adult Basic Education, hard-skills training (Occupational Safety & Health Administration [OSHA]; Food Protection) and vocational support services, including life skills development and job search assistance. Program activities take place seven days each week year-round, with each participant attending five days weekly, graduating from the program once he/she finds full-time employment.\n\nProject Stay-\nA life-long employment retention program that supports graduates as they acclimate to the world of work and transition to self-sufficiency.\nProject Stay offers groups, case management, social events and educational opportunities\ngeared toward professional advancement. Graduates who maintain employment are eligible for financial incentive\n\n\nProject Home-\nProject Home, ACE’s housing program, offers a 3-year subsidy to select graduates. Project Home provides a stable environment from which graduates can pursue vocational growth, increased earning power and enhanced independent living skills\n\nAll services are provided free of charge to program participants.\n\nThe admission criteria for Project Comeback are as follows:\n\n• Housing: all applicants must have a history of homelessness.\n• Sobriety: all applicants must have at least 30 days of documented sobriety.\n• Criminal History: applicants may not have a violent or aggressive criminal history.\n• Medical and Behavioral Health History: applicants must be able to lift, stand and walk for an 8-hour shift; applicants on medication for an Axis-1 diagnosis must have six months of documented stability; applicants cannot have had an inpatient psychiatric hospitalization in the previous six months.\n•",
+      "Project Comeback- \nA 4-6 month vocational rehabilitation program that provides recovering homeless individuals with the skills, support services, and motivation needed to obtain and sustain full-time employment and economic independence.\n\nParticipants receive job-readiness training, supported work experience (providing maintenance services to New York City streets and parks), Adult Basic Education, hard-skills training (Occupational Safety & Health Administration [OSHA]; Food Protection) and vocational support services, including life skills development and job search assistance. Program activities take place seven days each week year-round, with each participant attending five days weekly, graduating from the program once he/she finds full-time employment.\n\nProject Stay-\nA life-long employment retention program that supports graduates as they acclimate to the world of work and transition to self-sufficiency.\nProject Stay offers groups, case management, social events and educational opportunities\ngeared toward professional advancement. Graduates who maintain employment are eligible for financial incentive\n\n\nProject Home-\nProject Home, ACE’s housing program, offers a 3-year subsidy to select graduates. Project Home provides a stable environment from which graduates can pursue vocational growth, increased earning power and enhanced independent living skills\n\nAll services are provided free of charge to program participants.\n\nThe admission criteria for Project Comeback are as follows:\n\n• Housing: all applicants must have a history of homelessness.\n• Sobriety: all applicants must have at least 30 days of documented sobriety.\n• Criminal History: applicants may not have a violent or aggressive criminal history.\n• Medical and Behavioral Health History: applicants must be able to lift, stand and walk for an 8-hour shift; applicants on medication for an Axis-1 diagnosis must have six months of documented stability; applicants cannot have had an inpatient psychiatric hospitalization in the previous six months.\n•",
     url: "https://www.acenewyork.org/",
     specialty: "General (all adults)",
     age_lower: 18,
