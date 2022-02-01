@@ -55,7 +55,7 @@ export default [
     email: null,
     age_lower: null,
     age_upper: 18,
-    contact_number: "(718) 788-0666,
+    contact_number: "(718) 788-0666",
     org_type: "shelter",
     requirements: null,
   },
