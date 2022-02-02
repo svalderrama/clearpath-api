@@ -13,13 +13,19 @@ export default [
     contact_number: null,
     org_type: "shelter",
     requirements: null,
+    lat: 40.7519467,
+    long: -73.9911001,
   },
   {
     name: "Bowery Mission: Tribeca Campus",
     address: "90 Lafayette Street,New York, NY 10013",
     borough: "Manhattan",
     description:
-      "Shelter program is a compassionate intervention to that cycle. Including showers, hygiene items, clean clothes, linens, and brand-new donated mattresses, the shelter program provides services in a dignified setting.\n\nGuests are also able to connect with resources to take next steps out of crisis and poverty. They also serve guests who do not necessarily need the structure of their long-term residential program, such as people who may already be working or people who do not struggle with addiction.\n\nSafe overnight shelter is offered daily. Intake occurs 7 days a week: for women from 3:00pm - 3:45pm and for men from 4:00pm - 5:00pm. Walk in or call for more information.",
+      "Shelter program is a compassionate intervention to that cycle. Including showers, hygiene items, clean clothes, linens, and brand-new donated mattresses, the shelter program provides services in a dignified setting.\n" +
+      "\n" +
+      "Guests are also able to connect with resources to take next steps out of crisis and poverty. They also serve guests who do not necessarily need the structure of their long-term residential program, such as people who may already be working or people who do not struggle with addiction.\n" +
+      "\n" +
+      "Safe overnight shelter is offered daily. Intake occurs 7 days a week: for women from 3:00pm - 3:45pm and for men from 4:00pm - 5:00pm. Walk in or call for more information.",
     url: "https://www.bowery.org/get-help/",
     specialty: "Regular",
     email: null,
@@ -28,13 +34,16 @@ export default [
     contact_number: "(212) 226-6214",
     org_type: "shelter",
     requirements: null,
+    lat: 40.7175359,
+    long: -74.0016211,
   },
   {
     name: "Chelsea Foyer",
     address: "202 West 24th Street, NY, NY 10011, USA",
     borough: "Manhattan",
     description:
-      "The Chelsea Foyer at The Christopher provides supportive housing to young adults in their late teens and early twenties who have aged out of the child welfare system, are homeless, or at risk of homelessness. Residents participate in a personalized program of services for up to 24 months with the goal of preparing them for independent permanent housing, employment, and careers. The young men and women live semi-independently, in studio apartments or suites, while receiving a continuum of services to help them gain the competencies and confidence necessary for long-term self-sufficiency.\nCase management services are offered on-site, as are linkages to rigorous job training and placement, educational and life skills development. Foyer residents are also taught and encouraged to become completely self-sufficient, pursuing jobs with benefits to avoid the need for public assistance.",
+      "The Chelsea Foyer at The Christopher provides supportive housing to young adults in their late teens and early twenties who have aged out of the child welfare system, are homeless, or at risk of homelessness. Residents participate in a personalized program of services for up to 24 months with the goal of preparing them for independent permanent housing, employment, and careers. The young men and women live semi-independently, in studio apartments or suites, while receiving a continuum of services to help them gain the competencies and confidence necessary for long-term self-sufficiency.\n" +
+      "Case management services are offered on-site, as are linkages to rigorous job training and placement, educational and life skills development. Foyer residents are also taught and encouraged to become completely self-sufficient, pursuing jobs with benefits to avoid the need for public assistance.",
     url: "https://goodshepherds.org/program/chelsea-foyer/",
     specialty: "Young Adults",
     email: null,
@@ -43,6 +52,8 @@ export default [
     contact_number: "(646) 485-3954",
     org_type: "shelter",
     requirements: null,
+    lat: 40.7448508,
+    long: -73.9958315,
   },
   {
     name: "Close To Home Residences- ",
@@ -58,6 +69,25 @@ export default [
     contact_number: "(718) 788-0666",
     org_type: "shelter",
     requirements: null,
+    lat: 40.6676352,
+    long: -73.893107,
+  },
+  {
+    name: "CMCS Sunrise Drop-In Center",
+    address: "333 149th, Bronx, 10451",
+    borough: "The Bronx",
+    description:
+      "CMCS aims to protect youth between the ages of 14-24 and, whenever  possible, to reunite them with their families through an integrated network of services. When reunification is not possible, the program aims to protect youth and help them progress towards independent living. Through daily  workshops, case management services are offered and youth are assisted in meeting their basic needs, in receiving medical and mental health services, in furthering their education, in attaining employment, and in acquiring the  skills necessary to becoming an empowered, independent individual.",
+    url: "https://www.cmcs.org/our-services/at-risk-services/",
+    specialty: "Youth",
+    email: "FLardo-Dimarco@cmcs.org",
+    age_lower: 14,
+    age_upper: 24,
+    contact_number: "(718) 993-5495",
+    org_type: "shelter",
+    requirements: null,
+    lat: 40.8169565,
+    long: -73.9202065,
   },
   {
     name: "Coalition for the Homeless Youth",
@@ -73,13 +103,15 @@ export default [
     contact_number: "(347) 779-2352",
     org_type: "shelter",
     requirements: null,
+    lat: 40.6625048,
+    long: -73.9614225,
   },
   {
     name: "Covenant House NY",
     address: "550 10th Ave, New York, NY 10018",
     borough: "Manhattan",
     description:
-      "Covenant House New York (CHNY) has been a leader in providing residential services to vulnerable homeless, runaway, and exploited youth.  As the largest provider of runaway and homeless youth services in New York City, CHNY serves over 1,900 young adult ages 16-24 annually with an operating budget of over 25 million dollars.  We facilitate our services using trauma-informed principles to help homeless youth leave the streets and achieve independence. We also advocate for systemic change through public policy while promoting awareness of critical issues related to youth homelessness.",
+      "Covenant House New York (CHNY) has been a leader in providing residential services to vulnerable homeless, runaway, and exploited youth.  As the largest provider of runaway and homeless youth services in New York City, CHNY serves over 1,900 young adult ages 16-24 annually with an operating budget of over 25 million dollars.  We facilitate our services using trauma-informed principles to help homeless youth leave the streets and achieve independence. We also advocate for systemic change through public policy while promoting awareness of critical issues related to youth homelessness.",
     url: "https://www.covenanthouse.org",
     specialty: "Youth Organization",
     email: "info@covenanthouse.org",
@@ -88,6 +120,8 @@ export default [
     contact_number: null,
     org_type: "shelter",
     requirements: null,
+    lat: 40.7586536,
+    long: -73.9958359,
   },
   {
     name: "Family Shelters Bronx",
@@ -101,6 +135,25 @@ export default [
     contact_number: "(917) 521-3900",
     org_type: "shelter",
     requirements: null,
+    lat: 40.8216883,
+    long: -73.92757780000001,
+  },
+  {
+    name: "Fresh Youth Initiatives",
+    address: "505 W 171st St, New York, NY 10032",
+    borough: "Manhattan",
+    description:
+      "youth development services to low-income, first generation and immigrant youth in the washington heights area. Children participate in mental health, education, college access programs and more.",
+    url: "http://freshyouth.org/",
+    specialty: "Youth Organization",
+    email: "info@freshyouth.org",
+    age_lower: 4,
+    age_upper: 18,
+    contact_number: "(212) 781-1113",
+    org_type: "shelter",
+    requirements: null,
+    lat: 40.8420928,
+    long: -73.9359592,
   },
   {
     name: "HRA Men's Shelter",
@@ -115,7 +168,14 @@ export default [
     contact_number: "(718) 557-1399",
     org_type: "shelter",
     requirements:
-      "The following forms of ID are very helpful during the intake process (but are not required):\n\nAny form of ID with a picture and proof of age, such as a driver's license, state-issued ID, passport or visa, welfare card or green card\nSocial Security card\nMedicaid card, if available\nIf working, your most recent pay stub",
+      "The following forms of ID are very helpful during the intake process (but are not required):\n" +
+      "\n" +
+      "Any form of ID with a picture and proof of age, such as a driver's license, state-issued ID, passport or visa, welfare card or green card\n" +
+      "Social Security card\n" +
+      "Medicaid card, if available\n" +
+      "If working, your most recent pay stub",
+    lat: 40.740577,
+    long: -73.974771,
   },
   {
     name: "Mainchance Drop In Center",
@@ -131,6 +191,8 @@ export default [
     contact_number: "212-883-0680 Ext. 108",
     org_type: "shelter",
     requirements: null,
+    lat: 40.7452878,
+    long: -73.9814247,
   },
   {
     name: "Marian Hall",
@@ -145,13 +207,16 @@ export default [
     contact_number: null,
     org_type: "shelter",
     requirements: "Must have been referred by the New York City Administration for Children’s Services",
+    lat: 40.7337322,
+    long: -73.9820515,
   },
   {
     name: "McLaughlin East Harlem Residence",
     address: "55 East 110th Street, NY, NY 10029, USA",
     borough: "Manhattan",
     description:
-      "McLaughlin East Harlem Residence (formerly Edwin Gould Academy) is a housing program for young adults, ages 18 to 25. The East Harlem residency provides safe, affordable housing to 36 young adults in studio apartments. The residence also has 15 supportive housing units which consist of 15 one-bedroom apartments for a single parent with one child.\nIn addition to housing, McLaughlin East Harlem Residence offers a host of services and supports which include counseling, peer groups, life-skills training, and referrals-all designed to meet the emotional, employment, housing, educational, and legal needs of youth in one convenient setting.",
+      "McLaughlin East Harlem Residence (formerly Edwin Gould Academy) is a housing program for young adults, ages 18 to 25. The East Harlem residency provides safe, affordable housing to 36 young adults in studio apartments. The residence also has 15 supportive housing units which consist of 15 one-bedroom apartments for a single parent with one child.\n" +
+      "In addition to housing, McLaughlin East Harlem Residence offers a host of services and supports which include counseling, peer groups, life-skills training, and referrals-all designed to meet the emotional, employment, housing, educational, and legal needs of youth in one convenient setting.",
     url: "https://goodshepherds.org/program/edwin-gould-academy/",
     specialty: "Young Adults",
     email: null,
@@ -160,6 +225,8 @@ export default [
     contact_number: "(212) 828-2173",
     org_type: "shelter",
     requirements: null,
+    lat: 40.7960818,
+    long: -73.9469571,
   },
   {
     name: "Nazareth Housing",
@@ -175,6 +242,8 @@ export default [
     contact_number: "(646) 713-2671",
     org_type: "shelter",
     requirements: null,
+    lat: 40.72819,
+    long: -73.9807418,
   },
   {
     name: "New Alternatives for LGBT Homeless",
@@ -190,9 +259,11 @@ export default [
     contact_number: "(718) 300-0133",
     org_type: "shelter",
     requirements: null,
+    lat: 40.7572243,
+    long: -73.9943301,
   },
   {
-    name: "New York City Department of Homeless Services\nAdult Family Intake Center (AFIC)",
+    name: "New York City Department of Homeless Services\n" + "Adult Family Intake Center (AFIC)",
     address: "400 East 29th Street (1st Avenue)\nNew York, NY 10016 (Manhattan)",
     borough: "Manhattan",
     description: "Intake Facility for Adult Families with No Children",
@@ -204,6 +275,8 @@ export default [
     contact_number: "(212) 481-4704 or 311",
     org_type: "shelter",
     requirements: null,
+    lat: 40.7402407,
+    long: -73.97530669999999,
   },
   {
     name: "New York City Homeless Shelter",
@@ -218,6 +291,8 @@ export default [
     contact_number: "(212) 361-7971",
     org_type: "shelter",
     requirements: null,
+    lat: 40.8078226,
+    long: -73.91178839999999,
   },
   {
     name: "New York City Rescue Mission",
@@ -232,6 +307,8 @@ export default [
     contact_number: "(212) 226-6214",
     org_type: "shelter",
     requirements: null,
+    lat: 40.7175359,
+    long: -74.0016211,
   },
   {
     name: "Passaic Teen Center",
@@ -246,13 +323,21 @@ export default [
     contact_number: null,
     org_type: "shelter",
     requirements: null,
+    lat: 40.8712257,
+    long: -74.1249993,
   },
   {
     name: "Patnership for the Homeless",
     address: "305 7th Ave, New York, NY 10001",
     borough: "Manhattan",
     description:
-      "Homeless or Homeless-At-Risk Resource Center- \nHousing services include:\n-Offer financial assistance and landlord mediation to prevent the immediate loss of home and prevent future homelessness\n-Provide legal referrals\n-Support housing placement with vouchers, and a bank of available affordable apartments\n-Employment training and benefits screening\n-Connect to income support services offered at government offices and community partners",
+      "Homeless or Homeless-At-Risk Resource Center- \n" +
+      "Housing services include:\n" +
+      "-Offer financial assistance and landlord mediation to prevent the immediate loss of home and prevent future homelessness\n" +
+      "-Provide legal referrals\n" +
+      "-Support housing placement with vouchers, and a bank of available affordable apartments\n" +
+      "-Employment training and benefits screening\n" +
+      "-Connect to income support services offered at government offices and community partners",
     url: "https://partnershipforthehomeless.org/",
     specialty: "General (all adults)",
     email: "info@pfth.org",
@@ -261,6 +346,8 @@ export default [
     contact_number: "(212) 645-3444",
     org_type: "shelter",
     requirements: null,
+    lat: 40.7466546,
+    long: -73.9933453,
   },
   {
     name: "Project Hospitality",
@@ -276,6 +363,25 @@ export default [
     contact_number: null,
     org_type: "shelter",
     requirements: null,
+    lat: 40.638035,
+    long: -74.13213929999999,
+  },
+  {
+    name: "Providence House",
+    address: "703 Lexington Avenue, Brooklyn, NY 11221",
+    borough: "Brooklyn",
+    description:
+      "Providence House focuses its programs and services on two at-risk and underserved populations: women and children who are homeless and women recently paroled from prison. Providence House provides women and children in crisis with shelter, food and security as well as support services to help them transition to independence including: enrolling in education or job training programs, searching for employment, obtaining medical services and finding a permanent place to live.",
+    url: "http://www.providencehouse.org/",
+    specialty: "Youth and Women",
+    email: "http://www.providencehouse.org/",
+    age_lower: null,
+    age_upper: null,
+    contact_number: "(718) 455-0197",
+    org_type: "shelter",
+    requirements: null,
+    lat: 40.6899975,
+    long: -73.9327268,
   },
   {
     name: "Safe Horizon",
@@ -291,6 +397,8 @@ export default [
     contact_number: "(212) 695-2220",
     org_type: "shelter",
     requirements: null,
+    lat: 40.8093846,
+    long: -73.9487839,
   },
   {
     name: "Safe Horizon",
@@ -306,6 +414,8 @@ export default [
     contact_number: "(646) 602-6404",
     org_type: "shelter",
     requirements: null,
+    lat: 40.7160348,
+    long: -73.9897852,
   },
   {
     name: "Sylvia's Place",
@@ -321,6 +431,25 @@ export default [
     contact_number: "(212) 629-7440 ext 226",
     org_type: "shelter",
     requirements: null,
+    lat: 40.7553659,
+    long: -73.997492,
+  },
+  {
+    name: "The Door",
+    address: "555 Broome St, New York, NY 10013",
+    borough: "Manhattan",
+    description:
+      "offers health, mental health, legal appointments, career & education classes, and offer referrals to nearby shelters for homeless and runaway youth ",
+    url: "http://www.door.org/",
+    specialty: "Youth Organization",
+    email: "resources@door.org",
+    age_lower: 12,
+    age_upper: 24,
+    contact_number: "(212) 941-9090",
+    org_type: "shelter",
+    requirements: null,
+    lat: 40.7241123,
+    long: -74.0055596,
   },
   {
     name: "The Lantern Community- Jasper Hall",
@@ -337,6 +466,8 @@ export default [
     contact_number: "(212) 398-3073",
     org_type: "shelter",
     requirements: null,
+    lat: 40.8239515,
+    long: -73.9142587,
   },
   {
     name: "The Lantern Community- Savanna Hall",
@@ -353,6 +484,8 @@ export default [
     contact_number: "(212) 398-3074",
     org_type: "shelter",
     requirements: null,
+    lat: 40.752549,
+    long: -73.992768,
   },
   {
     name: "Trinity Place Shelter",
@@ -368,6 +501,8 @@ export default [
     contact_number: "(646) 580-7045",
     org_type: "shelter",
     requirements: null,
+    lat: 40.7962088,
+    long: -73.9681035,
   },
   {
     name: "Urban Pathways",
@@ -382,6 +517,8 @@ export default [
     contact_number: "(212) 736-7385",
     org_type: "shelter",
     requirements: null,
+    lat: 40.7550462,
+    long: -73.9917998,
   },
   {
     name: "Youth Shelter Program of Westchester",
@@ -397,66 +534,7 @@ export default [
     contact_number: "(212) 736-7385",
     org_type: "shelter",
     requirements: null,
-  },
-   {
-    name: "Fresh Youth Initiatives",
-    address: "505 W 171st St, New York, NY 10032",
-    borough: "Manhattan",
-    description:
-      "youth development services to low-income, first generation and immigrant youth in the washington heights area. Children participate in mental health, education, college access programs and more.",
-    url: "http://freshyouth.org/",
-    specialty: "Youth Organization",
-    email: "info@freshyouth.org",
-    age_lower: 4,
-    age_upper: 18,
-    contact_number: "(212) 781-1113",
-    org_type: "shelter",
-    requirements: null,
-  },
-   {
-    name: "The Door",
-    address: "555 Broome St, New York, NY 10013",
-    borough: "Manhattan",
-    description:
-      "offers health, mental health, legal appointments, career & education classes, and offer referrals to nearby shelters for homeless and runaway youth ",
-    url: "http://www.door.org/",
-    specialty: "Youth Organization",
-    email: "resources@door.org",
-    age_lower: 12,
-    age_upper: 24,
-    contact_number: "(212) 941-9090",
-    org_type: "shelter",
-    requirements: null,
-  },
-   {
-    name: "Providence House",
-    address: "703 Lexington Avenue, Brooklyn, NY 11221",
-    borough: "Brooklyn",
-    description:
-      "Providence House focuses its programs and services on two at-risk and underserved populations: women and children who are homeless and women recently paroled from prison. Providence House provides women and children in crisis with shelter, food and security as well as support services to help them transition to independence including: enrolling in education or job training programs, searching for employment, obtaining medical services and finding a permanent place to live.",
-    url: "http://www.providencehouse.org/",
-    specialty: "Youth and Women",
-    email: "http://www.providencehouse.org/",
-    age_lower: null,
-    age_upper: null,
-    contact_number: "(718) 455-0197",
-    org_type: "shelter",
-    requirements: null,
-  },
-     {
-    name: "CMCS Sunrise Drop-In Center",
-    address: "333 149th, Bronx, 10451",
-    borough: "The Bronx",
-    description:
-      "CMCS aims to protect youth between the ages of 14-24 and, whenever  possible, to reunite them with their families through an integrated network of services. When reunification is not possible, the program aims to protect youth and help them progress towards independent living. Through daily  workshops, case management services are offered and youth are assisted in meeting their basic needs, in receiving medical and mental health services, in furthering their education, in attaining employment, and in acquiring the  skills necessary to becoming an empowered, independent individual.",
-    url: "https://www.cmcs.org/our-services/at-risk-services/",
-    specialty: "Youth",
-    email: "FLardo-Dimarco@cmcs.org",
-    age_lower: 14,
-    age_upper: 24,
-    contact_number: "(718) 993-5495",
-    org_type: "shelter",
-    requirements: null,
+    lat: 40.8970151,
+    long: -73.8240553,
   },
 ];
-

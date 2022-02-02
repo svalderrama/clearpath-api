@@ -20,11 +20,13 @@ function AuthController() {
           return res.status(409).json({ error: `REGISTER::Session is already attached to request!!` });
         }
 
-        const { email, password, first_name } = req.body;
-        const { user, token } = await AuthService.register(email, password, first_name);
+        const { email, password, firstName } = req.body;
+        const { user, token } = await AuthService.register(email, password, firstName);
+
+        let _ = AuthService.attachSignedCookie(res, token);
 
         logger.info("AuthController::register::success");
-        return res.status(200).json({ message: "success", data: user });
+        return res.status(200).json({ message: "success", user, token });
       } catch (e) {
         logger.info(`AuthController::register:: ${e}`);
         await req.session.destroy;

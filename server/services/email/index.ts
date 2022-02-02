@@ -38,28 +38,37 @@ class EmailService implements EmailServiceI {
     try {
       this.logger.info("EmailService::sendEmail:: - Initialized - ");
 
-      //update!!
-      let recipient = DEV_ENV ? options.userEmail : `abartaddison12@gmail.com`;
+      //WE LIVE!!!!! (remove this comment)
+      let recipient = DEV_ENV ? options.userEmail : orgEmail;
 
       const name = options.userName || null;
       const defaultMessage = `
+      Hi ${orgName},\n
       ${
         name
-          ? `${name}, a member of the ClearPath community has expressed interest in accessing your programs!\n`
-          : `Our Clearpath community member has expressed interest in accessing your programs!\n`
+          ? `${name}, a member of the ClearPath community has expressed interest in accessing your program/services.\n`
+          : `Our Clearpath community member has expressed interest in accessing your program/services.\n`
       }
 
       ClearPath is an online resource directory, tailored towards youth experiencing homelessness, with the focus of connecting our trusting community to the right programs and resources with ease!\n
 
       ${
         name || "Our Clearpath community member"
-      },would greatly appreciate it if you contacted them or provided the needed information to be considered for your programs.Please find their contact information and/or necessary documentation below!`;
+      },would greatly appreciate it if you contacted them or provided the needed information to be considered for your programs.Please find their contact information CC'd in the email above!
+      
+      
+      Best,\n
+      ClearPath NYC Team
+      info@clearpathnyc.org
+      clearpath-foundation.org
+      `;
 
       const data = {
         from: `ClearPathNYC User (${options.userEmail}) <Clearpathnyc@gmail.com> `,
         to: [recipient],
         subject: "A message from ClearPath - ",
         text: defaultMessage,
+        cc: options.userEmail,
       };
 
       return this.#mailClient.messages.create(this.#MAILGUN_DOMAIN, data).then((res) => {

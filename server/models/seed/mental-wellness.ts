@@ -13,6 +13,8 @@ export default [
     contact_number: "(212) 206-0574",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.8107674,
+    long: -73.9528368,
   },
   {
     name: "Antonio Olivieri Drop-In Center",
@@ -28,6 +30,8 @@ export default [
     contact_number: "212-947-3211",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.7495646,
+    long: -73.994417,
   },
   {
     name: "Bowery Mission: Bowery Campus",
@@ -43,6 +47,41 @@ export default [
     contact_number: "212-674-3456",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.7219563,
+    long: -73.9928051,
+  },
+  {
+    name: "Bowery Mission: Women's Day Center",
+    address: "90 Lafayette Street, New York, NY 10013",
+    borough: "Manhattan",
+    description: "Women's Day Center- Provides each guest with nourishment physically, emotionally and spiritually.",
+    url: "https://www.bowery.org/get-help/",
+    specialty: null,
+    age_lower: null,
+    age_upper: null,
+    email: null,
+    contact_number: null,
+    org_type: "mentalWellness",
+    requirements: null,
+    lat: 40.7175359,
+    long: -74.0016211,
+  },
+  {
+    name: "Care for the Homeless",
+    address: "30 E 33rd St. 5th Floor, New York, New York, 10016",
+    borough: "Manhattan",
+    description:
+      "Provides high quality, patient-centered health care to all those experiencing homelessness regardless of their ability to pay. Service include: primary care services, behavioral health services, population health management, podiatry. ",
+    url: "https://www.careforthehomeless.org/",
+    specialty: "General",
+    age_lower: null,
+    age_upper: null,
+    email: null,
+    contact_number: "(212) 366-4459",
+    org_type: "mentalWellness",
+    requirements: null,
+    lat: 40.7466432,
+    long: -73.9829629,
   },
   {
     name: "Covenant House NY",
@@ -58,6 +97,8 @@ export default [
     email: "info@covenanthouse.org",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.7586536,
+    long: -73.9958359,
   },
   {
     name: "Euphrasian Residence",
@@ -73,6 +114,8 @@ export default [
     contact_number: "(212) 475-4245",
     org_type: "mentalWellness",
     requirements: "Must have been referred by the New York City Administration for Children’s Services.",
+    lat: 40.7337322,
+    long: -73.9820515,
   },
   {
     name: "HEAT",
@@ -88,6 +131,8 @@ export default [
     contact_number: "(718) 613-8543",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.6551024,
+    long: -73.9441565,
   },
   {
     name: "Homes for the Homeless",
@@ -103,6 +148,8 @@ export default [
     contact_number: "(212) 529-5252",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.7288086,
+    long: -73.9913158,
   },
   {
     name: "ICL ",
@@ -118,6 +165,8 @@ export default [
     contact_number: "212-385-3030",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.7023219,
+    long: -74.0111762,
   },
   {
     name: "myTherapyNYC",
@@ -133,6 +182,8 @@ export default [
     contact_number: " 646-449-0491",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.7400486,
+    long: -73.9893017999999,
   },
   {
     name: "New Alternatives",
@@ -148,6 +199,8 @@ export default [
     contact_number: "(718) 300-0133",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.7572243,
+    long: -73.9943301,
   },
   {
     name: "NYC Well",
@@ -178,6 +231,8 @@ export default [
     contact_number: "(212) 645-3444",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.7466546,
+    long: -73.9933453,
   },
   {
     name: "Safe Horizon: Streetwork Project",
@@ -193,6 +248,8 @@ export default [
     contact_number: null,
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.809416,
+    long: -73.948754,
   },
   {
     name: "The Breathing Project: Yoga for Mental Wellness",
@@ -208,6 +265,8 @@ export default [
     contact_number: "551-358-2269",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.7442547,
+    long: -73.9895012,
   },
   {
     name: "The Door",
@@ -223,6 +282,8 @@ export default [
     contact_number: "212-941-9090 Ext: 3522",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.814197,
+    long: -73.9177493,
   },
   {
     name: "The Door",
@@ -238,6 +299,8 @@ export default [
     contact_number: null,
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.7241123,
+    long: -74.0055596,
   },
   {
     name: "The Lantern Community ",
@@ -253,6 +316,8 @@ export default [
     contact_number: "212.398.3074",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.7528845,
+    long: -73.9932115,
   },
   {
     name: "The LGBT Center ",
@@ -268,10 +333,12 @@ export default [
     contact_number: "212.620.7310",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.738087,
+    long: -74.001046,
   },
   {
     name: "The Reciprocity Foundation",
-    address: " 151 W 19th St, New York, NY 10011",
+    address: " 151 W 19th St, New York, NY 10011",
     borough: "Manhattan",
     description:
       "Reciprocity has been pioneering holistic health programs for the Social Services sector in New York City.  Reciprocity was the first comprehensive holistic program for healing young adults facing homelessness, incarceration & trauma. The new space offers  meditation, acupuncture, massage, trauma therapy, sound healing & community meals to all New Yorkers in need of trauma support & recovery.",
@@ -283,6 +350,8 @@ export default [
     contact_number: null,
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.7414414,
+    long: -73.9965239,
   },
   {
     name: "Vita: Women's Mental Wellness Program",
@@ -298,6 +367,8 @@ export default [
     contact_number: "(718) 880-7321",
     org_type: "mentalWellness",
     requirements: null,
+    lat: 40.7197149,
+    long: -73.8387628,
   },
   {
     name: "Youth & Young Adult Specialized Care Center Bellevue Hospital",
@@ -313,20 +384,7 @@ export default [
     contact_number: "(212) 263-1534",
     org_type: "mentalWellness",
     requirements: null,
-  },
-  {
-    name: "Care for the Homeless",
-    address: "30 E 33rd St. 5th Floor, New York, New York, 10016",
-    borough: "Manhattan",
-    description:
-      "Provides high quality, patient-centered health care to all those experiencing homelessness regardless of their ability to pay. Service include: primary care services, behavioral health services, population health management, podiatry. ",
-    url: "https://www.careforthehomeless.org/",
-    specialty: "General",
-    age_lower: null,
-    age_upper: null,
-    email: null,
-    contact_number: "(212) 366-4459",
-    org_type: "mentalWellness",
-    requirements: null,
+    lat: 40.7396865,
+    long: -73.9762044,
   },
 ];

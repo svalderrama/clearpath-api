@@ -14,12 +14,15 @@ export default [
     org_type: "academic",
     requirements:
       "To join STEP you MUST: \n\nBe a NYC HIGH SCHOOL STUDENT, and\nBe a NY STATE RESIDENT (have lived in NY state for 1+ years), and\nSubmit ECONOMIC ELIGIBILITY DOCUMENTATION.  \n\nALL applying students MUST a copy of the appropriate documentation to verify economic eligibility. Appropriate documentation includes the one (1) following:\n\nProof of FREE or REDUCED LUNCH, or\nProof of PUBLIC ASSISTANCE, or\n(family) TAX RETURN showing adjusted gross income. \nPlease see income qualifications:https://www.bmcc.cuny.edu/academics/faculty-affairs/research-and-scholarly-inquiry/student-research-opportunities/economic-eligibility/           Please send pages 1 & 2, which show the household size and adjusted gross income \nAll required documents should be labeled with the student’s name and delivered by:\n\nscanning & emailing to bmccstep@gmail.com, ",
+    lat: 40.8126634,
+    long: -73.9146281,
   },
-   {
+  {
     name: "Betances Cornerstone Community Center",
     address: "547 E 146th St Bronx, NY 10455 ",
     borough: "Bronx",
-    description: "The Betances Cornerstone Community Center is open year-round. It provides activities for children and youth ages 5 through 21, as well as programs for adults and senior citizens. All activities are free and open to the community, with preference going to NYCHA residents. For children aged 5 to 12, the Betances Cornerstone Community Center offers an engaging after-school program that combines structured recreational activities with additional academic support, creating a safe space for children to learn and have fun.  During the summer, the Betances Community Center offers a summer camp that combines recreational activities with hands-on, engaging learning opportunities to reinforce lessons learned in school and prevent summer learning loss. For teens, Betances offers an exciting variety of activities during the evening.  All of these activities provide youth an opportunity to explore diverse interests in a safe space, many of which would otherwise be inaccessible.  From the Youth Council, composed of young women and men of diverse backgrounds who meet regularly and advise BronxWorks staff on issues affecting youth at the Betances Community Center and the Betances Houses, to basketball and dance, youth are given critical opportunities to develop leadership and team-building skills.  Our cooking classes and physical fitness activities encourage a healthy lifestyle by promoting exercise and smart choices.  Open mic and spoken word sessions offer teens a creative outlet where they can share their original work in a supportive environment. Email mmartinez@bronxworks.org to apply.",
+    description:
+      "The Betances Cornerstone Community Center is open year-round. It provides activities for children and youth ages 5 through 21, as well as programs for adults and senior citizens. All activities are free and open to the community, with preference going to NYCHA residents. For children aged 5 to 12, the Betances Cornerstone Community Center offers an engaging after-school program that combines structured recreational activities with additional academic support, creating a safe space for children to learn and have fun.  During the summer, the Betances Community Center offers a summer camp that combines recreational activities with hands-on, engaging learning opportunities to reinforce lessons learned in school and prevent summer learning loss. For teens, Betances offers an exciting variety of activities during the evening.  All of these activities provide youth an opportunity to explore diverse interests in a safe space, many of which would otherwise be inaccessible.  From the Youth Council, composed of young women and men of diverse backgrounds who meet regularly and advise BronxWorks staff on issues affecting youth at the Betances Community Center and the Betances Houses, to basketball and dance, youth are given critical opportunities to develop leadership and team-building skills.  Our cooking classes and physical fitness activities encourage a healthy lifestyle by promoting exercise and smart choices.  Open mic and spoken word sessions offer teens a creative outlet where they can share their original work in a supportive environment. Email mmartinez@bronxworks.org to apply.",
     url: "https://bronxworks.org/our-services/education-and-youth-development/",
     specialty: "Youth",
     age_lower: 5,
@@ -28,12 +31,15 @@ export default [
     contact_number: "(718) 585-5040",
     org_type: "academic",
     requirements: null,
+    lat: 40.7188851,
+    long: -74.0117547,
   },
   {
     name: "Camba Adult Basic Education and High School Equivalency Prep",
     address: "885 Flatbush Ave 3rd and 4th Floor Brooklyn, NY 11226",
     borough: "Brooklyn",
-    description: "The CAMBA Education Center (CEC) offers morning (9am to 12 noon), afternoon (1pm to 4pm), and evening (5:30pm to 8:30pm) classes from Monday through Friday. Programs include instruction in reading comprehension, English grammar and composition, mathematics, and test-taking skills for English learners and native English speakers to help prepare them for the Test Assessing Secondary Completion (TASC) so that they may obtain a high school equivalency diploma as soon as possible.",
+    description:
+      "The CAMBA Education Center (CEC) offers morning (9am to 12 noon), afternoon (1pm to 4pm), and evening (5:30pm to 8:30pm) classes from Monday through Friday. Programs include instruction in reading comprehension, English grammar and composition, mathematics, and test-taking skills for English learners and native English speakers to help prepare them for the Test Assessing Secondary Completion (TASC) so that they may obtain a high school equivalency diploma as soon as possible.",
     url: "https://camba.org/programs/adult-basic-education-high-school-equivalency-prep/",
     specialty: "High School",
     age_lower: 16,
@@ -42,12 +48,15 @@ export default [
     contact_number: "(718) 940-3453",
     org_type: "academic",
     requirements: null,
+    lat: 40.650225,
+    long: -73.958274,
   },
-   {
+  {
     name: "Camba Leading to College",
     address: "600 Kingston Ave Brooklyn, NY 11203",
     borough: "Brooklyn",
-    description: "Leading to College (LtC) is an intensive collaboration between CAMBA, CUNY’s College Now at Brooklyn College, and three high schools located at the Wingate Educational Complex: School for Human Rights, High School for Public Service and Brooklyn Institute for Liberal Arts. The 4-year program that starts in 9th grade is designed to improve student and family awareness about college, help students graduate high school on time, and earn credits that can be applied to their college degree. Students prepare with ‘College Now’ foundation courses—which follow a college-like syllabus, and build reading, writing, and critical reading skills. In 2018, 89% of students passed their college-level courses and earned 48 college credits, worth a total of $15,045.",
+    description:
+      "Leading to College (LtC) is an intensive collaboration between CAMBA, CUNY’s College Now at Brooklyn College, and three high schools located at the Wingate Educational Complex: School for Human Rights, High School for Public Service and Brooklyn Institute for Liberal Arts. The 4-year program that starts in 9th grade is designed to improve student and family awareness about college, help students graduate high school on time, and earn credits that can be applied to their college degree. Students prepare with ‘College Now’ foundation courses—which follow a college-like syllabus, and build reading, writing, and critical reading skills. In 2018, 89% of students passed their college-level courses and earned 48 college credits, worth a total of $15,045.",
     url: "https://camba.org/programs/leading-to-college/",
     specialty: "High School",
     age_lower: 14,
@@ -56,12 +65,15 @@ export default [
     contact_number: "(718) 771-4865",
     org_type: "academic",
     requirements: null,
+    lat: 40.6593652,
+    long: -73.9431462,
   },
   {
     name: "Camba Young Adult Borough Centers",
     address: "6565 Flatlands Ave Brooklyn, NY 11236",
     borough: "Brooklyn",
-    description: "This includes academic and student support, career and educational exploration, work preparation, skills development and paid internships. The internship program has been able to provide an opportunity for employment after high school.",
+    description:
+      "This includes academic and student support, career and educational exploration, work preparation, skills development and paid internships. The internship program has been able to provide an opportunity for employment after high school.",
     url: "https://camba.org/programs/young-adult-borough-centers/",
     specialty: "High School",
     age_lower: 16,
@@ -70,12 +82,15 @@ export default [
     contact_number: "(718) 940-3453",
     org_type: "academic",
     requirements: null,
+    lat: 40.6336811,
+    long: -73.9175196,
   },
   {
     name: "Classic Cornerstone Community Center",
     address: "286 E 156th St Bronx, NY 10451",
     borough: "Bronx",
-    description: "The Classic Cornerstone Community Center is open year-round. For children in grades K to 5, the Classic Cornerstone Community Center offers an engaging after-school program that combines structured recreational activities with additional academic support, creating a safe space for children to learn and have fun.  During the summer, the Classic Cornerstone Community Center offers a summer camp that combines recreational activities with hands-on, engaging learning opportunities to reinforce lessons learned in school and prevent summer learning loss. Apply in person at 286 E 156th St., Bronx, NY 10451.",
+    description:
+      "The Classic Cornerstone Community Center is open year-round. For children in grades K to 5, the Classic Cornerstone Community Center offers an engaging after-school program that combines structured recreational activities with additional academic support, creating a safe space for children to learn and have fun.  During the summer, the Classic Cornerstone Community Center offers a summer camp that combines recreational activities with hands-on, engaging learning opportunities to reinforce lessons learned in school and prevent summer learning loss. Apply in person at 286 E 156th St., Bronx, NY 10451.",
     url: "http://www.bronxworks.org/classic-community-center",
     specialty: "Youth",
     age_lower: null,
@@ -84,6 +99,8 @@ export default [
     contact_number: "(718) 665-1300",
     org_type: "academic",
     requirements: "K-5th Grade",
+    lat: 40.8217327,
+    long: -73.9203212,
   },
   {
     name: "College Now at Baruch College",
@@ -99,6 +116,8 @@ export default [
     contact_number: null,
     org_type: "academic",
     requirements: null,
+    lat: 40.7402384,
+    long: -73.9835124,
   },
   {
     name: "College Now at Hunter College",
@@ -114,6 +133,8 @@ export default [
     contact_number: null,
     org_type: "academic",
     requirements: null,
+    lat: 40.7687275,
+    long: -73.9651798,
   },
   {
     name: "Coursera",
@@ -129,6 +150,8 @@ export default [
     contact_number: null,
     org_type: "academic",
     requirements: null,
+    lat: 36.048671,
+    long: -95.905022,
   },
   {
     name: "Homes for the Homeless",
@@ -144,6 +167,8 @@ export default [
     contact_number: "(212) 529-5252",
     org_type: "academic",
     requirements: null,
+    lat: 40.7288086,
+    long: -73.9913158,
   },
   {
     name: "Patnership for the Homeless",
@@ -159,6 +184,8 @@ export default [
     contact_number: "(212) 645-3444",
     org_type: "academic",
     requirements: null,
+    lat: 40.7466546,
+    long: -73.9933453,
   },
   {
     name: "The Door",
@@ -174,6 +201,8 @@ export default [
     contact_number: null,
     org_type: "academic",
     requirements: null,
+    lat: 40.7241123,
+    long: -74.0055596,
   },
   {
     name: "Youth Action YouthBuild (YAYB)",
@@ -189,5 +218,7 @@ export default [
     contact_number: null,
     org_type: "academic",
     requirements: null,
+    lat: 40.7988305,
+    long: -73.9386916,
   },
 ];

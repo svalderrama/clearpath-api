@@ -129,7 +129,7 @@ class AuthService implements AuthServiceI {
     this.logger.info("AuthService::register:: checking if user exists...");
     const queryResult = await this.UserService.getByEmail(email);
 
-    //TODO: Check for existing session too..send 409
+    //TODO: Check for existing session too..send 409 (should that be here or controller?)
 
     if (queryResult) {
       this.logger.info("AuthService::register::failed:: User exists");

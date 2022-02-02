@@ -4,7 +4,7 @@ import { celebrate, Joi, Segments } from "celebrate";
 const validateRegisterPost = (req, res, next) =>
   celebrate({
     [Segments.BODY]: Joi.object({
-      first_name: Joi.string().required(),
+      firstName: Joi.string().required(),
       email: Joi.string().required(),
       password: Joi.string().required(),
     }),

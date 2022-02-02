@@ -14,6 +14,8 @@ export default [
     requirements:
       "High School (not required to be enrolled in school) age; Male; Preference given to Black & Latino applicants; No coding experience necessary; Only 40 students accepted per year.",
     org_type: "professionalServices",
+    lat: 40.7039915,
+    long: -74.0110917,
   },
   {
     name: "Beginning with Children: College Prep Afterschool Program",
@@ -29,6 +31,8 @@ export default [
     contact_number: null,
     requirements: "High School students who live or attend school in Brooklyn.",
     org_type: "professionalServices",
+    lat: 40.7092986,
+    long: -73.9587367,
   },
   {
     name: "BRC",
@@ -43,6 +47,8 @@ export default [
     contact_number: null,
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.7449235,
+    long: -73.9931127,
   },
   {
     name: "Bronx Junior Photo League at the Bronx Documentary Center",
@@ -58,6 +64,8 @@ export default [
     contact_number: "718.993.3512",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.8179993,
+    long: -73.918599,
   },
   {
     name: "Brooklyn Museum Work-Study and Art Classes",
@@ -73,6 +81,8 @@ export default [
     contact_number: "718.638.5000",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.6712083,
+    long: -73.9636299,
   },
   {
     name: "CAMBA Learning to Work Program",
@@ -88,8 +98,10 @@ export default [
     contact_number: "718.226.0436",
     requirements: null,
     org_type: "professionalServices",
-  },  
-{
+    lat: 40.6490908,
+    long: -73.9633697,
+  },
+  {
     name: "Codecademy",
     address: "Online",
     borough: "Online",
@@ -118,6 +130,8 @@ export default [
     contact_number: "917 463 3917",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.7265254,
+    long: -73.9926215,
   },
   {
     name: "Institute for Career Development",
@@ -133,6 +147,8 @@ export default [
     contact_number: "(212) 585-6000",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.7094756,
+    long: -74.0072955,
   },
   {
     name: "Made in NY Building Animation Skills @ NeON Centers",
@@ -148,6 +164,8 @@ export default [
     contact_number: "(917) 282-0933",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.8259599,
+    long: -73.9208508,
   },
   {
     name: "Made in NY Building Animation Skills @ NeON Centers",
@@ -163,6 +181,8 @@ export default [
     contact_number: "(917) 282-0931",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.6698684,
+    long: -73.9141067,
   },
   {
     name: "Made in NY Building Animation Skills @ NeON Centers",
@@ -178,6 +198,8 @@ export default [
     contact_number: "(917) 282-0932",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.809875,
+    long: -73.9458556,
   },
   {
     name: "Made in NY Building Animation Skills @ NeON Centers",
@@ -193,6 +215,8 @@ export default [
     contact_number: "(917) 282-0935",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.7044211,
+    long: -73.7970689,
   },
   {
     name: "Made in NY Building Animation Skills @ NeON Centers",
@@ -208,6 +232,8 @@ export default [
     contact_number: "(917) 282-0934",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.6339765,
+    long: -74.0754038,
   },
   {
     name: "Made in NY Post Production Training Program",
@@ -223,6 +249,8 @@ export default [
     contact_number: "347-470-3231.",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.6984715,
+    long: -73.9777647,
   },
   {
     name: "Made in NY Production Assistant Training Program",
@@ -238,6 +266,8 @@ export default [
     contact_number: "718-237-2017 x 145",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.6984715,
+    long: -73.9777647,
   },
   {
     name: "Made in NY Writer's Room",
@@ -253,6 +283,8 @@ export default [
     contact_number: "212-767-7800",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.7249946,
+    long: -74.0072895,
   },
   {
     name: "Partnership for the Homeless",
@@ -268,6 +300,8 @@ export default [
     contact_number: "(212) 645-3444",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.7466546,
+    long: -73.9933453,
   },
   {
     name: "Sound Thinking NYC",
@@ -283,6 +317,8 @@ export default [
     contact_number: "(212) 652-2832",
     requirements: "10th-12th grade",
     org_type: "professionalServices",
+    lat: 40.7481691,
+    long: -73.9894683,
   },
   {
     name: "The Association of Community Employment Programs for the Homeless (ACE)",
@@ -298,6 +334,8 @@ export default [
     contact_number: null,
     requirements: "Applicants must be at least 18 years of age and a U.S. citizen or legal resident.",
     org_type: "professionalServices",
+    lat: 40.7512283,
+    long: -73.9335479,
   },
   {
     name: "The Door",
@@ -313,6 +351,8 @@ export default [
     contact_number: null,
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.7241123,
+    long: -74.0055596,
   },
   {
     name: "The Lantern Community",
@@ -328,6 +368,8 @@ export default [
     contact_number: "212.398.3071",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.7528845,
+    long: -73.9932115,
   },
   {
     name: "Vita Teaching for Children",
@@ -343,6 +385,8 @@ export default [
     contact_number: "(718) 880-7321",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.7197149,
+    long: -73.8387628,
   },
   {
     name: "Vita: Workforce Development Program",
@@ -358,6 +402,8 @@ export default [
     contact_number: "(718) 880-7321",
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.7197149,
+    long: -73.8387628,
   },
   {
     name: "YearUp",
@@ -373,5 +419,7 @@ export default [
     contact_number: null,
     requirements: null,
     org_type: "professionalServices",
+    lat: 40.703984,
+    long: -74.011186,
   },
 ];
