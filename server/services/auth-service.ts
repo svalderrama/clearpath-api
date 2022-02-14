@@ -67,7 +67,10 @@ class AuthService implements AuthServiceI {
     const tokensMatch = signedCookieJWT === bearerToken;
     const missingToken = !signedCookieJWT || !bearerToken;
 
-    this.logger.error("AuthService::isAuthenticated:: Tokens ---", { signedCookieJWT, bearerToken });
+    this.logger.info(`AuthService::isAuthenticated:: req--- ${req}`);
+
+    this.logger.info(`AuthService::isAuthenticated:: Tokens signedCookieJWT--- ${signedCookieJWT}`);
+    this.logger.info(`AuthService::isAuthenticated:: Tokens bearerToken --- ${bearerToken}`);
 
     if (!tokensMatch || missingToken) {
       this.logger.error("AuthService::isAuthenticated:: could not authenticate!", {
@@ -87,6 +90,9 @@ class AuthService implements AuthServiceI {
       if (isExpired) passChecks = false;
       break;
     }
+
+    this.logger.info("AuthService::isAuthenticated:: PassChecks ---", passChecks);
+
     return passChecks;
   }
 
