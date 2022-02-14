@@ -29,8 +29,8 @@
     "dev:build": "rm -rf ./build && tsc",
     "dev:run": "wait-on -l build/index.js && nodemon",
     "dev:inspect": "wait-on -l build/index.js && nodemon --inspect ./server/index.ts",
-    "prod:build": "NODE_ENV=production tsc",
-    "prod:run": "wait-on -l build/index.js && nodemon build/index.js",
+    "prod:build": "rm -rf ./build && NODE_ENV=production tsc",
+    "prod:run": "wait-on -l build/index.js && NODE_ENV=production nodemon build/index.js",
     "cleanup:all": "prettier --config .prettierrc.json --w ./",
     "cleanup:file": "prettier --config .prettierrc.json --w",
     "test": "echo 'NOT IMPLEMENTED'"

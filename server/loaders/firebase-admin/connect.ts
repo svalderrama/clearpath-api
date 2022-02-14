@@ -34,7 +34,7 @@ const loadFirebaseAdmin = (() => {
     const db = instance.firestore();
     const gcpJSON = loadServiceAccountJson();
 
-    /* Need to looad these for express to use in sessions*/
+    /* Need to load these for express to use in sessions*/
     db.config = {
       projectId: gcpJSON.project_id,
       clientEmail: gcpJSON.client_email,

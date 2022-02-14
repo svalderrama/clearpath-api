@@ -67,7 +67,13 @@ class AuthService implements AuthServiceI {
     const tokensMatch = signedCookieJWT === bearerToken;
     const missingToken = !signedCookieJWT || !bearerToken;
 
+    this.logger.error("AuthService::isAuthenticated:: Tokens ---", { signedCookieJWT, bearerToken });
+
     if (!tokensMatch || missingToken) {
+      this.logger.error("AuthService::isAuthenticated:: could not authenticate!", {
+        signedToken: signedCookieJWT,
+        authToken: bearerToken,
+      });
       return false;
     }
 
