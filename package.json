@@ -5,6 +5,7 @@
   "dependencies": {
     "@google-cloud/connect-firestore": "^2.0.2",
     "@google-cloud/firestore": "^4.15.1",
+    "@types/express-useragent": "^1.0.2",
     "argon2": "^0.27.0",
     "celebrate": "^14.0.0",
     "cookie-parser": "^1.4.6",
@@ -12,6 +13,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "express-useragent": "^1.0.15",
     "express-winston": "^4.1.0",
     "firebase": "4.8.0",
     "firebase-admin": "^9.5.0",

@@ -23,6 +23,7 @@ import { FirestoreStore } from "@google-cloud/connect-firestore";
 
 import firebaseLoader from "../loaders/firebase-admin/connect";
 import cookieParser from "cookie-parser";
+import useragent from "express-useragent";
 
 const db = firebaseLoader.firestore();
 
@@ -61,6 +62,18 @@ const buildServer = (server: Express) => {
      */
     server.enable("trust proxy");
 
+    /* Serve static files */
+    // server.use(express.static(assetsDir));
+
+    server.use(cookieParser(Container.get("SESSION_SECRET_KEY")));
+
+    server.use(express.urlencoded({ extended: true }));
+
+    /** JSON middleware */
+    server.use(express.json());
+
+    server.use(useragent.express());
+
     /** Sessions middleware -- (Currently depends on Firebase DB) */
     server.use(
       session({
@@ -81,15 +94,6 @@ const buildServer = (server: Express) => {
         cookie: { maxAge: SESSION_MAX_AGE },
       }),
     );
-    /* Serve static files */
-    // server.use(express.static(assetsDir));
-
-    server.use(cookieParser(Container.get("SESSION_SECRET_KEY")));
-
-    server.use(express.urlencoded({ extended: true }));
-
-    /** JSON middleware */
-    server.use(express.json());
 
     /** Winston logging on request */
     server.use(

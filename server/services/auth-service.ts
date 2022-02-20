@@ -63,23 +63,25 @@ class AuthService implements AuthServiceI {
   public isAuthenticated(req: Request) {
     const signedCookieJWT = req.signedCookies[this.#tokenIdentifier];
     const bearerToken = req.headers.authorization;
+    const isMobileClient = req.useragent.isMobile;
 
     const tokensMatch = signedCookieJWT === bearerToken;
     const missingToken = !signedCookieJWT || !bearerToken;
-
-    this.logger.info(`AuthService::isAuthenticated:: req--- ${req}`);
 
     this.logger.info(`AuthService::isAuthenticated:: Tokens signedCookieJWT--- ${signedCookieJWT}`);
     this.logger.info(`AuthService::isAuthenticated:: Tokens bearerToken --- ${bearerToken}`);
 
     if (!tokensMatch || missingToken) {
-      this.logger.error("AuthService::isAuthenticated:: could not authenticate!", {
-        signedToken: signedCookieJWT,
-        authToken: bearerToken,
-      });
+      // this.logger.error("AuthService::isAuthenticated:: could not authenticate!");
+
+      if (isMobileClient && bearerToken) {
+        //Hack to get mobile working. Mobile clients do not have signedCookies
+        this.logger.info(`AuthService::isAuthenticated:: Is Mobile --- Token:${bearerToken}`);
+        return true;
+      }
+
       return false;
     }
-
     const tokens = [signedCookieJWT, bearerToken];
     let passChecks = true;
 
@@ -87,7 +89,10 @@ class AuthService implements AuthServiceI {
       //@ts-ignore
       const verifiedToken: Jwt = jwt.verify(tokens[i], this.#JWTSignature, { complete: true });
       const isExpired = this.isTokenExpired(verifiedToken);
-      if (isExpired) passChecks = false;
+      if (isExpired) {
+        passChecks = false;
+        this.logger.info(`AuthService::isAuthenticated:: Token is expired---`);
+      }
       break;
     }
 
